@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ===================================== -->
+<!-- HEAD / SEO -->
+<!-- ===================================== -->
+<head>
+<meta charset="UTF-8">
+
+<title>Noisechip | Freelance Pixel Artist for Indie Games</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="Freelance pixel artist creating characters, animations, UI, environments and retro-inspired game art for indie developers and studios.">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://noisechip.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Noisechip | Freelance Pixel Artist for Indie Games">
+<meta property="og:description" content="Pixel art, sprites, animations, UI and retro-inspired assets for indie games.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://noisechip.com/">
+<meta property="og:image" content="https://noisechip.com/img/logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Noisechip | Freelance Pixel Artist for Indie Games">
+<meta name="twitter:description" content="Pixel art assets for indie games and retro-inspired projects.">
+<meta name="twitter:image" content="https://noisechip.com/img/logo.png">
+
+<!-- Styles -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Icons -->
+<link rel="icon" type="image/x-icon" href="img/favicon.ico?v=1">
+<link rel="shortcut icon" href="img/favicon.ico?v=1">
+
+</head>
+
+
+<!-- ===================================== -->
+<!-- BODY -->
+<!-- ===================================== -->
+<body class="bg-dark text-light">
+
+<!-- Scroll To Top -->
+<button id="scrollTopBtn">↑</button>
+
+
+<!-- ===================================== -->
+<!-- NAVBAR -->
+<!-- ===================================== -->
+<nav class="navbar navbar-dark bg-black border-bottom border-light">
+  <div class="container">
+    <img src="img/logo.png" height="28" alt="Noisechip Logo">
+  </div>
+</nav>
+
+
+<!-- ===================================== -->
+<!-- HERO SECTION -->
+<!-- ===================================== -->
+<section class="hero text-center">
+
+  <h1>noisechip</h1>
+  <h2>Freelance Pixel Artist</h2>
+
+  <p>Retro-Inspired Pixel Art for Games</p>
+  <p class="hero-skills">
+    Characters • UI • Animations • Environments
+  </p>
+
+  <!-- Social Links -->
+  <div class="social-links mt-3">
+
+    <a href="https://instagram.com/noisechip" target="_blank" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5"></rect>
+        <circle cx="12" cy="12" r="4.5"></circle>
+        <circle cx="17.5" cy="6.5" r="1"></circle>
+      </svg>
+    </a>
+
+    <a href="https://x.com/noisechip" target="_blank" aria-label="X">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.9 2H21l-6.87 7.85L22.2 22h-6.34l-4.96-7.09L4.7 22H2.6l7.34-8.39L1.8 2h6.5l4.48 6.41L18.9 2Zm-1.11 18h1.75L7.35 3.9H5.47L17.79 20Z"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- Resume -->
+  <a href="files/noisechip-resume.pdf" target="_blank" class="resume-link">
+    Download Resume
+  </a>
+
+</section>
+
+
+<!-- ===================================== -->
+<!-- FILTER BUTTONS -->
+<!-- ===================================== -->
+<div class="container text-center my-4 filters" id="mainFilters">
+
+  <button class="filter-btn active" onclick="setCategory('all', this)">All</button>
+  <button class="filter-btn" onclick="setCategory('projects', this)">Projects</button>
+  <button class="filter-btn" onclick="setCategory('animations', this)">Animations</button>
+  <button class="filter-btn" onclick="setCategory('mockups', this)">Mockups</button>
+  <button class="filter-btn" onclick="setCategory('characters', this)">Characters</button>
+  <button class="filter-btn" onclick="setCategory('tiles-backgrounds', this)">Tiles & Backgrounds</button>
+  <button class="filter-btn" onclick="setCategory('gui', this)">GUI</button>
+  <button class="filter-btn" onclick="setCategory('illustrations', this)">Illustrations</button>
+  <button class="filter-btn" onclick="setCategory('fonts', this)">Fonts</button>
+  <button class="filter-btn" onclick="setCategory('various', this)">Various</button>
+
+</div>
+
+<!-- Optional Subfilters -->
+<div class="container text-center mb-3 filters" id="subfilters"></div>
+
+
+<!-- ===================================== -->
+<!-- GALLERY -->
+<!-- ===================================== -->
+<div class="container my-5">
+  <div class="row g-4" id="gallery"></div>
+</div>
+
+
+<!-- ===================================== -->
+<!-- MODAL VIEWER -->
+<!-- ===================================== -->
+<div class="modal fade" id="imageModal" tabindex="-1">
+
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+
+    <div class="modal-content bg-dark text-light position-relative p-3">
+
+      <!-- Close -->
+      <button class="close-gallery" data-bs-dismiss="modal" aria-label="Close">
+        ✕
+      </button>
+
+      <!-- Side Navigation -->
+      <button class="nav-arrow left" onclick="prevImage()">❮❮</button>
+      <button class="nav-arrow right" onclick="nextImage()">❯❯</button>
+
+      <!-- Main Image -->
+      <img id="modalImage" class="img-fluid w-100" alt="">
+
+      <!-- Bottom Navigation -->
+      <div class="bottom-arrows">
+        <button class="nav-arrow-inline" onclick="prevImage()">❮❮</button>
+        <button class="nav-arrow-inline" onclick="nextImage()">❯❯</button>
+      </div>
+
+      <!-- Dynamic Project Content -->
+      <div id="projectSections"></div>
+
+      <!-- Category -->
+      <div id="modalCategory" class="modal-category"></div>
+
+      <!-- Title -->
+      <h5 class="text-center mt-3 mb-2" id="modalTitle"></h5>
+
+      <!-- Project Navigation -->
+      <div class="project-nav">
+        <button class="project-switch" onclick="prevImage()">❮ Previous</button>
+        <button class="project-switch" onclick="nextImage()">Next ❯</button>
+      </div>
+
+      <!-- Description -->
+      <p class="text-center text-secondary mb-0" id="modalDesc"></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ===================================== -->
+<!-- ABOUT / CONTACT -->
+<!-- ===================================== -->
+<section class="container text-center my-5" id="about">
+
+  <h2 class="mb-3">Available for Work</h2>
+
+  <p class="text-secondary mx-auto" style="max-width:700px;">
+    Freelance pixel artist creating characters, environments, UI and animations for indie games and retro-inspired projects.
+  </p>
+
+  <p class="text-secondary mb-4">
+    Available for freelance work, commissions and long-term collaborations.
+  </p>
+
+  <a href="mailto:noisechipfreelancer@gmail.com?subject=Project Inquiry" class="hire-btn">
+    Start a Project
+  </a>
+
+  <p class="cta-note">
+    Currently available for new projects.<br>
+    Small and long-term projects welcome.
+  </p>
+
+  <!-- Contact Copy Buttons -->
+  <div class="contact-info mt-3">
+
+    <p class="mb-1 copy-item" onclick="copyText('noisechipfreelancer@gmail.com', 'Email')">
+      noisechipfreelancer@gmail.com
+    </p>
+
+    <p class="mb-0 copy-item" onclick="copyText('noisechip', 'Discord')">
+      Discord: noisechip
+    </p>
+
+    <span id="copyFeedback"></span>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================== -->
+<!-- FOOTER -->
+<!-- ===================================== -->
+<footer class="site-footer text-center">
+  <p class="mb-0">© <span id="currentYear"></span> noisechip — Available for Freelance</p>
+</footer>
+
+
+<!-- ===================================== -->
+<!-- SCRIPTS -->
+<!-- ===================================== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
