@@ -52,7 +52,7 @@ I also worked on presenting visual content in a clear way, improving the user ex
 
 ## Screenshots
 
-![Noisechip Portfolio Preview](img/preview.png)
+![Noisechip Portfolio Preview](img/previewgithub.png)
 
 ## Contact
 
