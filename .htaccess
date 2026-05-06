@@ -7,6 +7,11 @@ RewriteCond %{HTTP_HOST} ^www\.noisechip\.com$ [NC]
 RewriteRule ^(.*)$ https://noisechip.com/$1 [R=301,L]
 
 # ==================================================
+# REMOVE INDEX.HTML
+# ==================================================
+RewriteRule ^index\.html$ https://noisechip.com/ [R=301,L]
+
+# ==================================================
 # OLD HTML PAGES -> GONE
 # ==================================================
 RedirectMatch 410 ^/(about|animations|characters|contact|fonts|games|gui|illustrations|mockups|tilesandbackgrounds|various|works)\.html$
