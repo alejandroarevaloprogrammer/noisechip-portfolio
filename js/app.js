@@ -123,7 +123,6 @@ const artworks = [
   { title: "Top Down Racer Cars", desc: "Various Sizes", category: "various", image: "img/various/var06.png" },
   { title: "Portrait With Expressions", desc: "32x32", category: "various", image: "img/various/var05.png" },
   { title: "Balls", desc: "25x25", category: "various", image: "img/various/var04.png" },
-  { title: "Portraits", desc: "32x32", category: "various", image: "img/various/var03.png" },
   { title: "Hats", desc: "Top Down • 4 Directions • Various Sizes", category: "various", image: "img/various/var02.png" },
   { title: "Hats", desc: "Top Down • 4 Directions • Various Sizes", category: "various", image: "img/various/var01.png" },
 
