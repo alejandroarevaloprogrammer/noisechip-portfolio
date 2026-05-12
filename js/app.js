@@ -75,12 +75,10 @@ const artworks = [
   // CHARACTERS
   { title: "Various", desc: "72x72", category: "characters", image: "img/characters/char08.png" },
   { title: "RPG", desc: "16x16", category: "characters", image: "img/characters/char07.png" },
-  { title: "Various", desc: "Various Sizes", category: "characters", image: "img/characters/char06.png" },
   { title: "Various", desc: "16x16", category: "characters", image: "img/characters/char05.png" },
   { title: "Action", desc: "16x32", category: "characters", image: "img/characters/char04.png" },
   { title: "Action", desc: "96x48", category: "characters", image: "img/characters/char03.png" },
   { title: "RPG", desc: "18x16", category: "characters", image: "img/characters/char02.png" },
-  { title: "Action", desc: "26x64", category: "characters", image: "img/characters/char01.png" },
 
   // TILES & BACKGROUNDS
   { title: "RPG", desc: "256x144 • 16:9", category: "tiles-backgrounds", image: "img/tiles-backgrounds/bg10.gif" },
