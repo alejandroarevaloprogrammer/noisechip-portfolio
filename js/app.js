@@ -70,7 +70,6 @@ const artworks = [
   { title: "Action Platformer", desc: "160x144 • 10:9", category: "mockups", image: "img/mockups/mock04.png" },
   { title: "Visual Novel", desc: "256x144 • 16:9", category: "mockups", image: "img/mockups/mock03.png" },
   { title: "Visual Novel", desc: "256x144 • 16:9", category: "mockups", image: "img/mockups/mock02.png" },
-  { title: "Action", desc: "320x240 • 4:3", category: "mockups", image: "img/mockups/mock01.png" },
 
   // CHARACTERS
   { title: "Various", desc: "72x72", category: "characters", image: "img/characters/char08.png" },
