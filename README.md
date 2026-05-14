@@ -1,38 +1,61 @@
-# Noisechip Portfolio
+# Noisechip Portfolio Website
 
-A portfolio website for a pixel artist, built to showcase artwork through a clean interface, category filters and interactive modal navigation.
+Responsive portfolio website developed for a pixel artist to showcase artwork, commissions and visual projects through a clean and interactive front-end experience.
 
-## Live Demo
+---
+
+# Live Website
 
 https://noisechip.com/
 
-## Overview
+---
 
-Noisechip Portfolio is a responsive front-end project created for a freelance pixel artist.  
-The website focuses on presenting pixel art projects clearly, with a dynamic gallery system and simple navigation for different artwork categories.
+# Preview
 
-## Features
+![Noisechip Portfolio Preview](img/previewgithub.png)
 
-- Responsive layout
+---
+
+# Overview
+
+This project was developed as a responsive portfolio website focused on presenting pixel art projects through dynamic galleries, category filtering systems and interactive modal navigation.
+
+The website was designed to prioritize visual presentation, smooth navigation and responsive behavior while maintaining a clean and organized user experience across desktop, tablet and mobile devices.
+
+Special attention was given to modular front-end structure, DOM interaction systems, usability and scalable gallery organization.
+
+---
+
+# Features
+
+- Responsive portfolio layout
 - Dynamic artwork gallery
-- Category filters
-- Interactive image modal
-- Previous / next navigation
-- Contact section
-- Scroll-to-top button
-- SEO and social sharing meta tags
+- Interactive modal image viewer
+- Previous / next artwork navigation
+- Artwork category filters
+- Scroll-to-top functionality
+- Mobile and tablet optimized layouts
+- SEO optimized metadata
+- Open Graph support
+- Social sharing preview support
+- Clean UI focused on artwork presentation
 
-## Technologies Used
+---
+
+# Technologies Used
 
 - HTML5
-- CSS
-- Bootstrap 5
+- CSS3
 - JavaScript
+- Bootstrap 5
 
-## Project Structure
+---
+
+# Project Structure
 
 ```text
 noisechip-portfolio/
+
 ├── index.html
 ├── css/
 │   └── styles.css
@@ -44,20 +67,42 @@ noisechip-portfolio/
 └── README.md
 ```
 
+---
 
-## What I Learned
+# Local Development
 
-While building this project, I improved my understanding of responsive layouts, Bootstrap components, DOM manipulation and organizing interactive content with JavaScript.
-I also worked on presenting visual content in a clear way, improving the user experience for browsing artwork categories and viewing project details.
+Use VSCode Live Server:
 
-## Screenshots
+1. Open the project folder in VSCode
+2. Right click `index.html`
+3. Select `Open with Live Server`
 
-![Noisechip Portfolio Preview](img/previewgithub.png)
+---
 
-## Contact
+# Deployment
+
+The project is deployed as a custom domain portfolio website.
+
+Main URL:
+
+https://noisechip.com/
+
+---
+
+# What I Learned
+
+While developing this project, I improved my understanding of responsive front-end layouts, dynamic gallery systems, modal navigation and DOM manipulation using JavaScript.
+
+I also worked on organizing visual content efficiently, improving user navigation flow and building reusable front-end structures for interactive portfolio experiences.
+
+---
+
+# Contact
 
 Created by Alejandro Arevalo Rojas.
 
-GitHub: https://github.com/alejandroarevaloprogrammer
+GitHub:  
+https://github.com/alejandroarevaloprogrammer
 
-Portfolio: https://alejandroarevalorojas.com/
+Portfolio:  
+https://alejandroarevalorojas.com/
