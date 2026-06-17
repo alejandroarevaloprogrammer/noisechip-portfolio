@@ -72,6 +72,7 @@ const artworks = [
   { title: "Visual Novel", desc: "256x144 • 16:9", category: "mockups", image: "img/mockups/mock02.png" },
 
   // CHARACTERS
+  { title: "Various", desc: "32x32", category: "characters", image: "img/characters/char09.png" },
   { title: "Various", desc: "72x72", category: "characters", image: "img/characters/char08.png" },
   { title: "RPG", desc: "16x16", category: "characters", image: "img/characters/char07.png" },
   { title: "Various", desc: "16x16", category: "characters", image: "img/characters/char05.png" },
@@ -119,6 +120,7 @@ const artworks = [
   { title: "Various", desc: "14x14", category: "fonts", image: "img/fonts/font01.png" },
 
   // VARIOUS
+  { title: "RPG Inventory Items ", desc: "16x16 & 32x16", category: "various", image: "img/various/var08.png" },
   { title: "Vertical Shooter Ships & Enemies", desc: "Various Sizes", category: "various", image: "img/various/var07.png" },
   { title: "Top Down Racer Cars", desc: "Various Sizes", category: "various", image: "img/various/var06.png" },
   { title: "Portrait With Expressions", desc: "32x32", category: "various", image: "img/various/var05.png" },
