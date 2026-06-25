@@ -72,6 +72,7 @@ const artworks = [
   { title: "Visual Novel", desc: "256x144 • 16:9", category: "mockups", image: "img/mockups/mock02.png" },
 
   // CHARACTERS
+  { title: "Various", desc: "16x16", category: "characters", image: "img/characters/char10.png" },
   { title: "Various", desc: "32x32", category: "characters", image: "img/characters/char09.png" },
   { title: "Various", desc: "72x72", category: "characters", image: "img/characters/char08.png" },
   { title: "RPG", desc: "16x16", category: "characters", image: "img/characters/char07.png" },
