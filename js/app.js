@@ -38,7 +38,6 @@ const artworks = [
   // ANIMATIONS
   { title: "Walking", desc: "Side Scrolling • 16x24 • 4 Frames", category: "animations", image: "img/animations/ani14.gif" },
   { title: "Various", desc: "Top Down Front • 16x16 • 4 Frames", category: "animations", image: "img/animations/ani13.gif" },
-  { title: "Idle", desc: "Side Scrolling • 24x32 • 4 Frames", category: "animations", image: "img/animations/ani12.gif" },
   { title: "Walking", desc: "Top Down • 8 Directions • 16x20 • 4 Frames", category: "animations", image: "img/animations/ani11.gif" },
   { title: "Walking & Death", desc: "Side Scrolling • 16x16 • 4 Frames", category: "animations", image: "img/animations/ani10.gif" },
   { title: "Moving", desc: "Top Down • 4 Directions • 16x16 • 4 Frames", category: "animations", image: "img/animations/ani09.gif" },
@@ -46,8 +45,6 @@ const artworks = [
   { title: "Running", desc: "Side Scrolling • 24x32 • 6 Frames", category: "animations", image: "img/animations/ani07.gif" },
   { title: "Various", desc: "Vertical Scrolling • Various Sizes • Various Frames", category: "animations", image: "img/animations/ani06.gif" },
   { title: "Idle", desc: "Vertical Scrolling • Various Sizes • 4 Frames", category: "animations", image: "img/animations/ani05.gif" },
-  { title: "Walking & Attack", desc: "Side Scrolling • 24x32 • 6 Frames", category: "animations", image: "img/animations/ani04.gif" },
-  { title: "Walking", desc: "Side Scrolling • 16x16 • 8 Frames", category: "animations", image: "img/animations/ani03.gif" },
   { title: "Moving & Action", desc: "Side Scrolling • 16x16 • 6 Frames", category: "animations", image: "img/animations/ani02.gif" },
 
   // MOCKUPS
@@ -125,7 +122,6 @@ const artworks = [
   { title: "Vertical Shooter Ships & Enemies", desc: "Various Sizes", category: "various", image: "img/various/var07.png" },
   { title: "Top Down Racer Cars", desc: "Various Sizes", category: "various", image: "img/various/var06.png" },
   { title: "Portrait With Expressions", desc: "32x32", category: "various", image: "img/various/var05.png" },
-  { title: "Balls", desc: "25x25", category: "various", image: "img/various/var04.png" },
   { title: "Hats", desc: "Top Down • 4 Directions • Various Sizes", category: "various", image: "img/various/var02.png" },
   { title: "Hats", desc: "Top Down • 4 Directions • Various Sizes", category: "various", image: "img/various/var01.png" },
 
