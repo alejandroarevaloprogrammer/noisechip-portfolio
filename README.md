@@ -106,3 +106,13 @@ https://github.com/alejandroarevaloprogrammer
 
 Portfolio:  
 https://alejandroarevalorojas.com/
+
+---
+
+# License
+
+This repository is publicly available for portfolio and reference purposes only.
+
+The source code is not licensed for reuse, redistribution or commercial use without permission.
+
+All pixel art, artwork, images, logos and other visual content related to Noisechip are protected by copyright and may not be reused, reproduced or redistributed without permission.
