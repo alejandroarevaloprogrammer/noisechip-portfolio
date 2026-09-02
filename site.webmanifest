@@ -1,0 +1,22 @@
+{
+  "name": "Noisechip | Pixel Artist",
+  "short_name": "Noisechip",
+  "description": "Freelance pixel artist creating characters, animations, UI and game-ready assets for indie developers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/img/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
