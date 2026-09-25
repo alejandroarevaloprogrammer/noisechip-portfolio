@@ -1,121 +1,36 @@
-# Noisechip Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Responsive portfolio website developed for a pixel artist to showcase artwork, commissions and visual projects through a clean and interactive front-end experience.
+## Getting Started
 
----
+First, run the development server:
 
-# Live Website
-
-https://noisechip.com/
-
----
-
-# Preview
-
-![Noisechip Portfolio Preview](img/previewgithub.png)
-
----
-
-# Overview
-
-This project was developed as a responsive portfolio website focused on presenting pixel art projects through dynamic galleries, category filtering systems and interactive modal navigation.
-
-The website was designed to prioritize visual presentation, smooth navigation and responsive behavior while maintaining a clean and organized user experience across desktop, tablet and mobile devices.
-
-Special attention was given to modular front-end structure, DOM interaction systems, usability and scalable gallery organization.
-
----
-
-# Features
-
-- Responsive portfolio layout
-- Dynamic artwork gallery
-- Interactive modal image viewer
-- Previous / next artwork navigation
-- Artwork category filters
-- Scroll-to-top functionality
-- Mobile and tablet optimized layouts
-- SEO optimized metadata
-- Open Graph support
-- Social sharing preview support
-- Clean UI focused on artwork presentation
-
----
-
-# Technologies Used
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
-
----
-
-# Project Structure
-
-```text
-noisechip-portfolio/
-
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── app.js
-├── img/
-├── files/
-│   └── noisechip-resume.pdf
-└── README.md
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Local Development
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Use VSCode Live Server:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-1. Open the project folder in VSCode
-2. Right click `index.html`
-3. Select `Open with Live Server`
+## Learn More
 
----
+To learn more about Next.js, take a look at the following resources:
 
-# Deployment
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-The project is deployed as a custom domain portfolio website.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Main URL:
+## Deploy on Vercel
 
-https://noisechip.com/
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-# What I Learned
-
-While developing this project, I improved my understanding of responsive front-end layouts, dynamic gallery systems, modal navigation and DOM manipulation using JavaScript.
-
-I also worked on organizing visual content efficiently, improving user navigation flow and building reusable front-end structures for interactive portfolio experiences.
-
----
-
-# Contact
-
-Created by Alejandro Arevalo Rojas.
-
-Portfolio:  
-https://alejandroarevalorojas.com/
-
-GitHub:  
-https://github.com/alejandroarevaloprogrammer
-
-LinkedIn:  
-https://www.linkedin.com/in/alejandro-ar%C3%A9valo-rojas-755335365/
-
----
-
-# License
-
-This repository is publicly available for portfolio and reference purposes only.
-
-The source code is not licensed for reuse, redistribution or commercial use without permission.
-
-All pixel art, artwork, images, logos and other visual content related to Noisechip are protected by copyright and may not be reused, reproduced or redistributed without permission.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
