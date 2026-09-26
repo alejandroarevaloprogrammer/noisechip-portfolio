@@ -1,7 +1,5 @@
+import Hero from "@/components/home/Hero/Hero";
+
 export default function Home() {
-  return (
-    <main>
-      <h1>Noisechip</h1>
-    </main>
-  );
+  return <Hero />;
 }
