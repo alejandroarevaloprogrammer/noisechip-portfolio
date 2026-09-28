@@ -31,6 +31,8 @@ export const projects: Project[] = [
       "A retro-style platformer currently in development.",
     disciplines: ["environments"],
     cover: "/projects/retro-platformer/image-01.png",
+    coverWidth: 768,
+    coverHeight: 432,
     gallery: [
       {
         src: "/projects/retro-platformer/image-01.png",
@@ -56,6 +58,8 @@ export const projects: Project[] = [
       "A retro-style puzzle game with complete pixel art created by Noisechip.",
     disciplines: ["characters", "animations", "ui-gui"],
     cover: "/projects/retro-puzzle/gui-01.png",
+    coverWidth: 768,
+    coverHeight: 432,
     gallery: [
       {
         src: "/projects/retro-puzzle/character-01.gif",
@@ -79,8 +83,15 @@ export const projects: Project[] = [
     role: "All Art",
     shortDescription:
       "A casual memory game with complete pixel art created by Noisechip.",
-    disciplines: ["characters", "animations", "environments", "ui-gui"],
+    disciplines: [
+      "characters",
+      "animations",
+      "environments",
+      "ui-gui",
+    ],
     cover: "/projects/retro-casual-memory/gameplay-01.png",
+    coverWidth: 1366,
+    coverHeight: 768,
     gallery: [
       ...createMedia(
         "/projects/retro-casual-memory",
@@ -120,8 +131,15 @@ export const projects: Project[] = [
     role: "In-game Graphics",
     shortDescription:
       "A casual arcade game featuring in-game pixel graphics created by Noisechip.",
-    disciplines: ["characters", "animations", "environments", "ui-gui"],
+    disciplines: [
+      "characters",
+      "animations",
+      "environments",
+      "ui-gui",
+    ],
     cover: "/projects/retro-casual-arcade/gameplay-01.png",
+    coverWidth: 576,
+    coverHeight: 768,
     gallery: [
       ...createMedia(
         "/projects/retro-casual-arcade",

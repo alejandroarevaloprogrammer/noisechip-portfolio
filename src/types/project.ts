@@ -19,6 +19,8 @@ export interface Project {
   description?: string;
   disciplines: WorkCategory[];
   cover: string;
+  coverWidth: number;
+  coverHeight: number;
   gallery: ProjectMedia[];
   relatedWork?: string[];
   featured: boolean;

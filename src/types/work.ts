@@ -12,6 +12,8 @@ export interface WorkItem {
   id: string;
   title: string;
   media: string;
+  width: number;
+  height: number;
   mediaType: WorkMediaType;
   categories: WorkCategory[];
   tags?: string[];
