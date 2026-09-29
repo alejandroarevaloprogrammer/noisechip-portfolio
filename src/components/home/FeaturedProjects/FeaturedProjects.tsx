@@ -43,6 +43,7 @@ export default function FeaturedProjects() {
                     width={project.coverWidth}
                     height={project.coverHeight}
                     className={styles.image}
+                    unoptimized
                   />
                 </div>
 

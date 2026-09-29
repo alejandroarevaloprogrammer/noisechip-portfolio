@@ -44,6 +44,7 @@ export default function Hero() {
             height={432}
             priority
             className={styles.artworkImage}
+            unoptimized
           />
         </div>
       </div>

@@ -106,7 +106,7 @@ export default function WorkLightbox({
             width={1600}
             height={1600}
             className={styles.image}
-            unoptimized={item.mediaType === "gif"}
+            unoptimized
             priority
           />
         </div>

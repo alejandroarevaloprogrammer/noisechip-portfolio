@@ -25,7 +25,7 @@ export default function WorkCard({
           width={800}
           height={800}
           className={styles.image}
-          unoptimized={item.mediaType === "gif"}
+          unoptimized
         />
       </button>
 

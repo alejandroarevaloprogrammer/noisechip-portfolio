@@ -43,6 +43,7 @@ export default function FeaturedWork() {
                     width={item.width}
                     height={item.height}
                     className={styles.image}
+                    unoptimized
                 />
               </div>
 
