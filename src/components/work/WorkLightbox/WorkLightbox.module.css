@@ -5,26 +5,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-4);
-  background: rgb(0 0 0 / 88%);
+  padding: 0;
+  background: rgb(0 0 0 / 94%);
 }
 
 .lightbox {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  width: min(100%, 100rem);
-  height: min(100%, 60rem);
-  max-height: calc(100dvh - (var(--space-4) * 2));
+  width: 100%;
+  height: 100dvh;
   background: var(--color-background);
-  border: var(--border-width) solid var(--color-border);
 }
 
 .topbar {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: var(--space-6);
-  padding: var(--space-4);
+  gap: var(--space-4);
+  min-height: 4rem;
+  padding: var(--space-2) var(--space-4);
   border-bottom: var(--border-width) solid var(--color-border);
 }
 
@@ -74,17 +73,15 @@
   justify-content: center;
   min-width: 0;
   min-height: 0;
-  padding: clamp(1rem, 3vw, 3rem);
+  padding: var(--space-2);
   overflow: hidden;
   background: var(--color-surface);
 }
 
 .image {
   display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   image-rendering: pixelated;
 }
@@ -93,8 +90,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-6);
-  padding: var(--space-4);
+  gap: var(--space-4);
+  min-height: 3.75rem;
+  padding: var(--space-2) var(--space-4);
   border-top: var(--border-width) solid var(--color-border);
 }
 
@@ -115,7 +113,7 @@
 }
 
 .navigationButton {
-  min-height: 2.75rem;
+  min-height: 2.5rem;
   padding: var(--space-2) var(--space-4);
   font: inherit;
   font-size: var(--font-size-sm);
@@ -138,30 +136,25 @@
 }
 
 @media (max-width: 48rem) {
-  .overlay {
-    padding: 0;
-  }
-
-  .lightbox {
-    width: 100%;
-    height: 100dvh;
-    max-height: none;
-    border: 0;
-  }
-
   .topbar {
-    gap: var(--space-4);
-    padding: var(--space-4);
+    min-height: 3.75rem;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .title {
+    font-size: var(--font-size-base);
   }
 
   .viewer {
-    padding: var(--space-3);
+    padding: var(--space-1);
   }
 
   .bottomBar {
     align-items: stretch;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-2);
+    min-height: 0;
+    padding: var(--space-2) var(--space-3);
   }
 
   .navigation {
