@@ -103,8 +103,8 @@ export default function WorkLightbox({
             key={item.id}
             src={item.media}
             alt={item.alt}
-            width={1600}
-            height={1600}
+            width={item.width}
+            height={item.height}
             className={styles.image}
             unoptimized
             priority
