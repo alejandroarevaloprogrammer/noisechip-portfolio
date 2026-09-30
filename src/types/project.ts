@@ -34,5 +34,4 @@ export interface Project {
   coverHeight: number;
   gallery: ProjectMedia[];
   relatedWork?: string[];
-  featured: boolean;
 }

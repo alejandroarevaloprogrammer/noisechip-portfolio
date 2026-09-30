@@ -38,7 +38,6 @@ function createWorkItems({
       height: itemDimensions.height,
       mediaType: itemMediaType,
       categories: [category],
-      featured: false,
       alt: `Noisechip ${category} pixel art ${number}.`,
     };
   });
@@ -72,7 +71,6 @@ export const workItems: WorkItem[] = [
     mediaType: "image",
     categories: ["characters"],
     tags: ["creatures", "sprites"],
-    featured: false,
     alt: "Pixel art creature sprites by Noisechip.",
   },
   {
@@ -84,7 +82,6 @@ export const workItems: WorkItem[] = [
     mediaType: "image",
     categories: ["characters"],
     tags: ["portrait", "expressions"],
-    featured: false,
     alt: "Pixel art character portrait expressions by Noisechip.",
   },
 
@@ -136,7 +133,6 @@ export const workItems: WorkItem[] = [
     mediaType: "image",
     categories: ["icons-items"],
     tags: ["hats", "equipment"],
-    featured: false,
     alt: "Pixel art hats and helmets by Noisechip.",
   },
   {
@@ -148,7 +144,6 @@ export const workItems: WorkItem[] = [
     mediaType: "image",
     categories: ["icons-items"],
     tags: ["vehicles", "cars"],
-    featured: false,
     alt: "Pixel art racing cars by Noisechip.",
   },
   {
@@ -160,7 +155,6 @@ export const workItems: WorkItem[] = [
     mediaType: "image",
     categories: ["icons-items"],
     tags: ["spaceships", "enemies"],
-    featured: false,
     alt: "Pixel art spaceships and enemies by Noisechip.",
   },
   {
@@ -172,7 +166,6 @@ export const workItems: WorkItem[] = [
     mediaType: "image",
     categories: ["icons-items"],
     tags: ["RPG", "inventory", "equipment"],
-    featured: false,
     alt: "Pixel art RPG inventory items and equipment by Noisechip.",
   },
 

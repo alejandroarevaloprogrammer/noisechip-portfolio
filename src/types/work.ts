@@ -18,7 +18,6 @@ export interface WorkItem {
   categories: WorkCategory[];
   tags?: string[];
   project?: string;
-  featured: boolean;
   alt: string;
   presentation?: {
     size: WorkPresentationSize;

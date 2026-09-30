@@ -71,7 +71,6 @@ export const projects: Project[] = [
         group: "environments",
       },
     ],
-    featured: false,
   },
   {
     slug: "retro-puzzle",
@@ -144,7 +143,6 @@ export const projects: Project[] = [
         group: "ui-gui",
       },
     ],
-    featured: false,
   },
   {
     slug: "retro-casual-memory",
@@ -242,7 +240,6 @@ export const projects: Project[] = [
         group: "gameplay",
       }),
     ],
-    featured: false,
   },
   {
     slug: "retro-casual-arcade",
@@ -301,6 +298,5 @@ export const projects: Project[] = [
         group: "gameplay",
       }),
     ],
-    featured: false,
   },
 ];
