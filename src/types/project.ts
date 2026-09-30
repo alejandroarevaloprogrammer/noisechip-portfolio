@@ -2,10 +2,21 @@ import type { WorkCategory } from "@/data/categories";
 
 export type ProjectStatus = "completed" | "in-development";
 
+export type ProjectMediaType = "image" | "gif";
+
+export type ProjectMediaGroup =
+  | "environments"
+  | "characters-animation"
+  | "ui-gui"
+  | "gameplay";
+
 export interface ProjectMedia {
   src: string;
-  type: "image" | "gif";
+  type: ProjectMediaType;
   alt: string;
+  width: number;
+  height: number;
+  group: ProjectMediaGroup;
 }
 
 export interface Project {

@@ -1,0 +1,123 @@
+.section {
+  padding-block: var(--section-space);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.eyebrow {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.title {
+  max-width: 14ch;
+}
+
+.groups {
+  display: grid;
+  gap: var(--section-space);
+}
+
+.group {
+  min-width: 0;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.groupTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.count {
+  flex-shrink: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--space-6);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(1rem, 2vw, 2rem);
+  background: var(--color-surface);
+}
+
+.artworkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  cursor: zoom-in;
+}
+
+.artworkButton:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+@media (max-width: 48rem) {
+  .section {
+    padding-block: var(--space-8);
+  }
+
+  .header {
+    margin-bottom: var(--space-7);
+  }
+
+  .groups {
+    gap: var(--space-8);
+  }
+
+  .groupHeader {
+    margin-bottom: var(--space-4);
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .item {
+    padding: var(--space-4);
+  }
+}

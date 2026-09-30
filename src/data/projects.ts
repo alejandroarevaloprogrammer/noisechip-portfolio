@@ -1,12 +1,29 @@
-import type { Project } from "@/types/project";
+import type {
+  Project,
+  ProjectMediaGroup,
+} from "@/types/project";
 
-function createMedia(
-  basePath: string,
-  prefix: string,
-  count: number,
-  label: string,
-  gifIndexes: number[] = [],
-) {
+interface CreateMediaOptions {
+  basePath: string;
+  prefix: string;
+  count: number;
+  label: string;
+  width: number;
+  height: number;
+  group: ProjectMediaGroup;
+  gifIndexes?: number[];
+}
+
+function createMedia({
+  basePath,
+  prefix,
+  count,
+  label,
+  width,
+  height,
+  group,
+  gifIndexes = [],
+}: CreateMediaOptions) {
   return Array.from({ length: count }, (_, index) => {
     const number = index + 1;
     const extension = gifIndexes.includes(number) ? "gif" : "png";
@@ -15,6 +32,9 @@ function createMedia(
       src: `${basePath}/${prefix}-${String(number).padStart(2, "0")}.${extension}`,
       type: extension === "gif" ? ("gif" as const) : ("image" as const),
       alt: `${label} ${number}.`,
+      width,
+      height,
+      group,
     };
   });
 }
@@ -37,12 +57,18 @@ export const projects: Project[] = [
       {
         src: "/projects/retro-platformer/image-01.png",
         type: "image",
-        alt: "Retro Platformer pixel art environment.",
+        alt: "Retro Platformer pixel art environment 1.",
+        width: 768,
+        height: 432,
+        group: "environments",
       },
       {
         src: "/projects/retro-platformer/image-02.png",
         type: "image",
-        alt: "Retro Platformer pixel art environment.",
+        alt: "Retro Platformer pixel art environment 2.",
+        width: 768,
+        height: 432,
+        group: "environments",
       },
     ],
     featured: false,
@@ -65,12 +91,58 @@ export const projects: Project[] = [
         src: "/projects/retro-puzzle/character-01.gif",
         type: "gif",
         alt: "Animated pixel art character from Retro Puzzle.",
+        width: 800,
+        height: 800,
+        group: "characters-animation",
       },
-      ...Array.from({ length: 6 }, (_, index) => ({
-        src: `/projects/retro-puzzle/gui-${String(index + 1).padStart(2, "0")}.png`,
-        type: "image" as const,
-        alt: `Retro Puzzle pixel art UI ${index + 1}.`,
-      })),
+      {
+        src: "/projects/retro-puzzle/gui-01.png",
+        type: "image",
+        alt: "Retro Puzzle pixel art UI 1.",
+        width: 768,
+        height: 432,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-puzzle/gui-02.png",
+        type: "image",
+        alt: "Retro Puzzle pixel art UI 2.",
+        width: 768,
+        height: 432,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-puzzle/gui-03.png",
+        type: "image",
+        alt: "Retro Puzzle pixel art UI 3.",
+        width: 768,
+        height: 432,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-puzzle/gui-04.png",
+        type: "image",
+        alt: "Retro Puzzle pixel art UI 4.",
+        width: 800,
+        height: 800,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-puzzle/gui-05.png",
+        type: "image",
+        alt: "Retro Puzzle pixel art UI 5.",
+        width: 800,
+        height: 800,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-puzzle/gui-06.png",
+        type: "image",
+        alt: "Retro Puzzle pixel art UI 6.",
+        width: 768,
+        height: 432,
+        group: "ui-gui",
+      },
     ],
     featured: false,
   },
@@ -93,32 +165,82 @@ export const projects: Project[] = [
     coverWidth: 1366,
     coverHeight: 768,
     gallery: [
-      ...createMedia(
-        "/projects/retro-casual-memory",
-        "background",
-        10,
-        "Retro Casual Memory pixel art background",
-      ),
-      ...createMedia(
-        "/projects/retro-casual-memory",
-        "character",
-        11,
-        "Retro Casual Memory pixel art character",
-        [11],
-      ),
-      ...createMedia(
-        "/projects/retro-casual-memory",
-        "gui",
-        16,
-        "Retro Casual Memory pixel art UI",
-        [2],
-      ),
-      ...createMedia(
-        "/projects/retro-casual-memory",
-        "gameplay",
-        6,
-        "Retro Casual Memory gameplay",
-      ),
+      ...createMedia({
+        basePath: "/projects/retro-casual-memory",
+        prefix: "background",
+        count: 10,
+        label: "Retro Casual Memory pixel art background",
+        width: 768,
+        height: 432,
+        group: "environments",
+      }),
+
+      ...createMedia({
+        basePath: "/projects/retro-casual-memory",
+        prefix: "character",
+        count: 10,
+        label: "Retro Casual Memory pixel art character",
+        width: 800,
+        height: 800,
+        group: "characters-animation",
+      }),
+
+      {
+        src: "/projects/retro-casual-memory/character-11.gif",
+        type: "gif",
+        alt: "Retro Casual Memory animated pixel art character 11.",
+        width: 768,
+        height: 432,
+        group: "characters-animation",
+      },
+
+      {
+        src: "/projects/retro-casual-memory/gui-01.png",
+        type: "image",
+        alt: "Retro Casual Memory pixel art UI 1.",
+        width: 768,
+        height: 432,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-casual-memory/gui-02.gif",
+        type: "gif",
+        alt: "Retro Casual Memory animated pixel art UI 2.",
+        width: 768,
+        height: 432,
+        group: "ui-gui",
+      },
+      {
+        src: "/projects/retro-casual-memory/gui-03.png",
+        type: "image",
+        alt: "Retro Casual Memory pixel art UI 3.",
+        width: 800,
+        height: 800,
+        group: "ui-gui",
+      },
+
+      ...Array.from({ length: 13 }, (_, index) => {
+        const number = index + 4;
+
+        return {
+          src: `/projects/retro-casual-memory/gui-${String(number).padStart(2, "0")}.png`,
+          type: "image" as const,
+          alt: `Retro Casual Memory pixel art UI ${number}.`,
+          width: 768,
+          height: 432,
+          group: "ui-gui" as const,
+        };
+      }),
+
+      ...createMedia({
+        basePath: "/projects/retro-casual-memory",
+        prefix: "gameplay",
+        count: 6,
+        label: "Retro Casual Memory gameplay",
+        width: 1366,
+        height: 768,
+        group: "gameplay",
+      }),
     ],
     featured: false,
   },
@@ -141,31 +263,43 @@ export const projects: Project[] = [
     coverWidth: 576,
     coverHeight: 768,
     gallery: [
-      ...createMedia(
-        "/projects/retro-casual-arcade",
-        "background",
-        3,
-        "Retro Casual Arcade pixel art background",
-      ),
-      ...createMedia(
-        "/projects/retro-casual-arcade",
-        "character",
-        1,
-        "Retro Casual Arcade pixel art character",
-        [1],
-      ),
-      ...createMedia(
-        "/projects/retro-casual-arcade",
-        "gui",
-        1,
-        "Retro Casual Arcade pixel art UI",
-      ),
-      ...createMedia(
-        "/projects/retro-casual-arcade",
-        "gameplay",
-        6,
-        "Retro Casual Arcade gameplay",
-      ),
+      ...createMedia({
+        basePath: "/projects/retro-casual-arcade",
+        prefix: "background",
+        count: 3,
+        label: "Retro Casual Arcade pixel art background",
+        width: 480,
+        height: 480,
+        group: "environments",
+      }),
+
+      {
+        src: "/projects/retro-casual-arcade/character-01.gif",
+        type: "gif",
+        alt: "Retro Casual Arcade animated pixel art character.",
+        width: 800,
+        height: 800,
+        group: "characters-animation",
+      },
+
+      {
+        src: "/projects/retro-casual-arcade/gui-01.png",
+        type: "image",
+        alt: "Retro Casual Arcade pixel art UI.",
+        width: 800,
+        height: 800,
+        group: "ui-gui",
+      },
+
+      ...createMedia({
+        basePath: "/projects/retro-casual-arcade",
+        prefix: "gameplay",
+        count: 6,
+        label: "Retro Casual Arcade gameplay",
+        width: 576,
+        height: 768,
+        group: "gameplay",
+      }),
     ],
     featured: false,
   },
