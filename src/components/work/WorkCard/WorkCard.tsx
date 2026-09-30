@@ -22,8 +22,8 @@ export default function WorkCard({
         <Image
           src={item.media}
           alt={item.alt}
-          width={800}
-          height={800}
+          width={item.width}
+          height={item.height}
           className={styles.image}
           unoptimized
         />

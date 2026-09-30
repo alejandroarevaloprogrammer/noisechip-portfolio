@@ -4,6 +4,7 @@ import { projects } from "@/data/projects";
 import ProjectHero from "@/components/projects/ProjectDetail/ProjectHero";
 import ProjectAbout from "@/components/projects/ProjectDetail/ProjectAbout";
 import ProjectGallery from "@/components/projects/ProjectDetail/ProjectGallery";
+import ProjectNavigation from "@/components/projects/ProjectNavigation/ProjectNavigation";
 
 interface ProjectPageProps {
   params: Promise<{
@@ -49,11 +50,28 @@ export default async function ProjectPage({
     notFound();
   }
 
+  const currentIndex = projects.findIndex(
+    (item) => item.slug === project.slug,
+  );
+
+  const previousProject =
+    projects[
+      (currentIndex - 1 + projects.length) % projects.length
+    ];
+
+  const nextProject =
+    projects[(currentIndex + 1) % projects.length];
+
   return (
     <main>
       <ProjectHero project={project} />
       <ProjectAbout project={project} />
       <ProjectGallery project={project} />
+
+      <ProjectNavigation
+        previousProject={previousProject}
+        nextProject={nextProject}
+      />
     </main>
   );
 }
