@@ -33,5 +33,4 @@ export interface Project {
   coverWidth: number;
   coverHeight: number;
   gallery: ProjectMedia[];
-  relatedWork?: string[];
 }
