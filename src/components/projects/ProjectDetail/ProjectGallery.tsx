@@ -147,11 +147,11 @@ export default function ProjectGallery({
                               event.currentTarget,
                             )
                           }
-                          aria-label={`Open ${item.alt}`}
+                          aria-label={`Open artwork: ${item.alt}`}
                         >
                           <Image
                             src={item.src}
-                            alt={item.alt}
+                            alt=""
                             width={item.width}
                             height={item.height}
                             className={styles.image}
