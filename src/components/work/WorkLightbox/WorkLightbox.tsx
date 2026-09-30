@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import type { WorkItem } from "@/types/work";
 import styles from "./WorkLightbox.module.css";
@@ -32,18 +32,68 @@ export default function WorkLightbox({
   onPrevious,
   onNext,
 }: WorkLightboxProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
+    closeButtonRef.current?.focus();
+
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
+        event.preventDefault();
         onClose();
+        return;
       }
 
       if (event.key === "ArrowLeft" && hasPrevious) {
+        event.preventDefault();
         onPrevious();
+        return;
       }
 
       if (event.key === "ArrowRight" && hasNext) {
+        event.preventDefault();
         onNext();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const dialog = dialogRef.current;
+
+      if (!dialog) {
+        return;
+      }
+
+      const focusableElements = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      );
+
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement =
+        focusableElements[focusableElements.length - 1];
+
+      if (
+        event.shiftKey &&
+        document.activeElement === firstElement
+      ) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (
+        !event.shiftKey &&
+        document.activeElement === lastElement
+      ) {
+        event.preventDefault();
+        firstElement.focus();
       }
     }
 
@@ -66,6 +116,7 @@ export default function WorkLightbox({
 
   return (
     <div
+      ref={dialogRef}
       className={styles.overlay}
       role="dialog"
       aria-modal="true"
@@ -89,6 +140,7 @@ export default function WorkLightbox({
           </div>
 
           <button
+            ref={closeButtonRef}
             type="button"
             className={styles.close}
             onClick={onClose}

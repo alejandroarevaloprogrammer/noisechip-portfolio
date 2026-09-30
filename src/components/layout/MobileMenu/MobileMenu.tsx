@@ -1,20 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 import { mainNavigation } from "@/data/navigation";
 import styles from "./MobileMenu.module.css";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   function closeMenu() {
     setIsOpen(false);
   }
 
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        toggleRef.current?.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
   return (
     <div className={styles.mobileMenu}>
       <button
+        ref={toggleRef}
         type="button"
         className={styles.toggle}
         aria-expanded={isOpen}
@@ -22,10 +43,7 @@ export default function MobileMenu() {
         aria-label={isOpen ? "Close menu" : "Open menu"}
         onClick={() => setIsOpen((current) => !current)}
       >
-        <span
-          className={styles.toggleLines}
-          aria-hidden="true"
-        >
+        <span className={styles.toggleLines} aria-hidden="true">
           <span />
           <span />
         </span>
