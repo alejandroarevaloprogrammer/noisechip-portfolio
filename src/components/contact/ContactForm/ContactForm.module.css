@@ -1,0 +1,116 @@
+.form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.field label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.optional {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-muted);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 0;
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.field input,
+.field select {
+  min-height: 3.25rem;
+}
+
+.field textarea {
+  min-height: 12rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: var(--color-text-muted);
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  width: fit-content;
+  min-width: 13rem;
+  min-height: 3.25rem;
+  padding: var(--space-3) var(--space-4);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-background);
+  background: var(--color-text);
+  border: var(--border-width) solid var(--color-text);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.submit:hover {
+  color: var(--color-text);
+  background: transparent;
+  border-color: var(--color-border-strong);
+}
+
+.submit:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.notice {
+  max-width: 36rem;
+  padding: var(--space-4);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border-left: 2px solid var(--color-accent);
+}
+
+@media (max-width: 48rem) {
+  .form {
+    gap: var(--space-5);
+  }
+
+  .submit {
+    width: 100%;
+  }
+}
