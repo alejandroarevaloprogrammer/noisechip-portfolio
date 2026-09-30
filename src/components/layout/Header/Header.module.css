@@ -1,8 +1,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: var(--z-header);
-  width: 100%;
+  z-index: 50;
   background: var(--color-background);
   border-bottom: var(--border-width) solid var(--color-border);
 }
@@ -11,73 +10,67 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 4.5rem;
   gap: var(--space-6);
+  min-height: 4.5rem;
 }
 
 .logo {
   flex-shrink: 0;
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
+  font-weight: var(--font-weight-semibold);
   letter-spacing: -0.03em;
-  text-transform: uppercase;
-  transition: color var(--transition-fast);
 }
 
-.logo:hover {
-  color: var(--color-accent);
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.navigation {
+  display: block;
 }
 
 .navigationList {
   display: flex;
   align-items: center;
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .navigationLink {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--color-text-muted);
   transition: color var(--transition-fast);
-}
-
-.navigationLink::after {
-  position: absolute;
-  right: 0;
-  bottom: 0.35rem;
-  left: 0;
-  height: 2px;
-  content: "";
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform var(--transition-fast);
 }
 
 .navigationLink:hover {
   color: var(--color-text);
 }
 
-.navigationLink:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.navigationLink[aria-current="page"] {
+  color: var(--color-accent);
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-5);
+.navigationLink:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
 }
 
 @media (max-width: 48rem) {
+  .inner {
+    min-height: 4rem;
+  }
+
   .navigation {
     display: none;
+  }
+
+  .actions {
+    gap: var(--space-3);
   }
 }

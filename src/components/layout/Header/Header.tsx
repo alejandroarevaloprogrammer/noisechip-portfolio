@@ -1,31 +1,36 @@
 import Link from "next/link";
 import MobileMenu from "@/components/layout/MobileMenu/MobileMenu";
+import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle";
+import { mainNavigation } from "@/data/navigation";
 import styles from "./Header.module.css";
-
-const navigation = [
-  { href: "/work", label: "Work" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logo} aria-label="Noisechip home">
+        <Link
+          href="/"
+          className={styles.logo}
+          aria-label="Noisechip home"
+        >
           Noisechip
         </Link>
 
         <div className={styles.actions}>
-          <nav className={styles.navigation} aria-label="Main navigation">
+          <nav
+            className={styles.navigation}
+            aria-label="Main navigation"
+          >
             <ul className={styles.navigationList}>
-              {navigation.map((item) => (
+              {mainNavigation.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className={styles.navigationLink}>
+                  <NavigationLink
+                    href={item.href}
+                    className={styles.navigationLink}
+                  >
                     {item.label}
-                  </Link>
+                  </NavigationLink>
                 </li>
               ))}
             </ul>

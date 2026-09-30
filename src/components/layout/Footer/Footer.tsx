@@ -1,12 +1,6 @@
 import Link from "next/link";
+import { mainNavigation } from "@/data/navigation";
 import styles from "./Footer.module.css";
-
-const navigation = [
-  { href: "/work", label: "Work" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
 
 const socialLinks = [
   {
@@ -27,22 +21,32 @@ export default function Footer() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.main}>
           <div className={styles.identity}>
-            <Link href="/" className={styles.logo}>
+            <Link
+              href="/"
+              className={styles.logo}
+            >
               Noisechip
             </Link>
 
             <p className={styles.description}>
-              Freelance pixel artist creating retro-inspired art for games.
+              Freelance pixel artist creating retro-inspired art
+              for games.
             </p>
           </div>
 
-          <nav className={styles.navigation} aria-label="Footer navigation">
+          <nav
+            className={styles.navigation}
+            aria-label="Footer navigation"
+          >
             <p className={styles.heading}>Navigate</p>
 
             <ul className={styles.list}>
-              {navigation.map((item) => (
+              {mainNavigation.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className={styles.link}>
+                  <Link
+                    href={item.href}
+                    className={styles.link}
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -72,7 +76,9 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>© {currentYear} Alejandro Arevalo Rojas</p>
+          <p>
+            © {currentYear} Alejandro Arevalo Rojas
+          </p>
 
           <p>Pixel art for games.</p>
         </div>

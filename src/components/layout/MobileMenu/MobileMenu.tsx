@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
+import { mainNavigation } from "@/data/navigation";
 import styles from "./MobileMenu.module.css";
-
-const navigation = [
-  { href: "/work", label: "Work" },
-  { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +22,10 @@ export default function MobileMenu() {
         aria-label={isOpen ? "Close menu" : "Open menu"}
         onClick={() => setIsOpen((current) => !current)}
       >
-        <span className={styles.toggleLines} aria-hidden="true">
+        <span
+          className={styles.toggleLines}
+          aria-hidden="true"
+        >
           <span />
           <span />
         </span>
@@ -41,15 +38,15 @@ export default function MobileMenu() {
           aria-label="Mobile navigation"
         >
           <ul className={styles.navigationList}>
-            {navigation.map((item) => (
+            {mainNavigation.map((item) => (
               <li key={item.href}>
-                <Link
+                <NavigationLink
                   href={item.href}
                   className={styles.navigationLink}
                   onClick={closeMenu}
                 >
                   {item.label}
-                </Link>
+                </NavigationLink>
               </li>
             ))}
           </ul>
