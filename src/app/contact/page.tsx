@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
+    <>
       <section className={styles.hero}>
         <div className="container">
           <p className={styles.eyebrow}>Contact</p>
@@ -93,6 +93,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

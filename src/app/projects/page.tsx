@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main>
+    <>
       <ProjectsHeader />
       <ProjectsGrid />
-    </main>
+    </>
   );
 }

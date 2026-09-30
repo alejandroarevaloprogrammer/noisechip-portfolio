@@ -63,7 +63,7 @@ export default async function ProjectPage({
     projects[(currentIndex + 1) % projects.length];
 
   return (
-    <main>
+    <>
       <ProjectHero project={project} />
       <ProjectAbout project={project} />
       <ProjectGallery project={project} />
@@ -72,6 +72,6 @@ export default async function ProjectPage({
         previousProject={previousProject}
         nextProject={nextProject}
       />
-    </main>
+    </>
   );
 }

@@ -46,7 +46,7 @@ const tools = ["Aseprite", "GameMaker", "Unity"];
 
 export default function AboutPage() {
   return (
-    <main>
+    <>
       <section className={styles.hero}>
         <div className="container">
           <p className={styles.eyebrow}>About</p>
@@ -184,6 +184,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }
