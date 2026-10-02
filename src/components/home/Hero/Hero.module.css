@@ -1,40 +1,59 @@
 .hero {
+  position: relative;
   display: flex;
   min-height: calc(100svh - 4.5rem);
   align-items: center;
-  padding-block: var(--space-8);
   overflow: hidden;
 }
 
-.inner {
-  display: grid;
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--color-background) 0%,
+    color-mix(in srgb, var(--color-background) 96%, transparent) 18%,
+    color-mix(in srgb, var(--color-background) 82%, transparent) 32%,
+    color-mix(in srgb, var(--color-background) 48%, transparent) 46%,
+    color-mix(in srgb, var(--color-background) 16%, transparent) 58%,
+    transparent 70%
+  );
+}
+
+.backgroundImage {
+  display: block;
   width: 100%;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  width: 100%;
   align-items: center;
-  gap: clamp(2rem, 3vw, 4rem);
+  padding-block: var(--space-8);
 }
 
 .content {
   display: flex;
   width: 100%;
+  max-width: 48rem;
   min-width: 0;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.artwork {
-  display: flex;
-  width: 100%;
-  min-width: 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.artworkImage {
-  width: min(100%, 46rem);
-  height: auto;
-  object-fit: contain;
-  image-rendering: pixelated;
 }
 
 .eyebrow {
@@ -98,6 +117,7 @@
 
 .secondaryAction {
   color: var(--color-text);
+  background: color-mix(in srgb, var(--color-background) 45%, transparent);
   border-color: var(--color-border-strong);
 }
 
@@ -107,36 +127,56 @@
 }
 
 .availability {
+  display: inline-flex;
   max-width: 38rem;
+  align-items: center;
+  gap: 0.6rem;
   margin-top: var(--space-5);
+  padding: 0.55rem 0.75rem;
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-background) 82%, transparent);
+  border: var(--border-width) solid
+    color-mix(in srgb, var(--color-border-strong) 75%, transparent);
+  border-radius: var(--radius-sm);
+}
+
+.availabilityDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  flex: 0 0 auto;
+  background: var(--color-accent);
+  border-radius: 50%;
 }
 
 @media (max-width: 48rem) {
   .hero {
-    min-height: auto;
+    min-height: calc(100svh - 4.5rem);
+    align-items: flex-start;
+  }
+
+  .background::after {
+    background: linear-gradient(
+      180deg,
+      var(--color-background) 0%,
+      var(--color-background) 18%,
+      color-mix(in srgb, var(--color-background) 96%, transparent) 38%,
+      color-mix(in srgb, var(--color-background) 90%, transparent) 58%,
+      color-mix(in srgb, var(--color-background) 72%, transparent) 72%,
+      color-mix(in srgb, var(--color-background) 38%, transparent) 86%,
+      transparent 100%
+    );
+  }
+
+  .inner {
     align-items: flex-start;
     padding-top: var(--space-7);
     padding-bottom: var(--space-8);
   }
 
-  .inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-7);
-  }
-
   .content {
     width: 100%;
-  }
-
-  .artwork {
-    width: 100%;
-  }
-
-  .artworkImage {
-    width: 100%;
-    height: auto;
   }
 
   .eyebrow {
@@ -164,6 +204,10 @@
 
   .primaryAction,
   .secondaryAction {
+    width: 100%;
+  }
+
+  .availability {
     width: 100%;
   }
 }
