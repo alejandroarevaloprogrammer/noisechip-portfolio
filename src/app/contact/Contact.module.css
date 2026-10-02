@@ -1,8 +1,21 @@
 .hero {
-  padding-block: var(--section-space);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
 }
 
-.eyebrow,
+.heroInner {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.eyebrow {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
 .label {
   margin-bottom: var(--space-4);
   font-size: var(--font-size-xs);
@@ -12,9 +25,20 @@
   color: var(--color-accent);
 }
 
+.heroInner .eyebrow {
+  margin-bottom: 0;
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
+  align-items: end;
+  gap: var(--space-7);
+}
+
 .title {
   max-width: 14ch;
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2.75rem, 5.5vw, 4.75rem);
   font-weight: var(--font-weight-semibold);
   line-height: 0.95;
   letter-spacing: -0.04em;
@@ -22,7 +46,7 @@
 
 .description {
   max-width: 42rem;
-  margin-top: var(--space-6);
+  padding-bottom: 0.3rem;
   font-size: var(--font-size-lg);
   line-height: 1.6;
   color: var(--color-text-muted);
@@ -97,17 +121,26 @@
 }
 
 @media (max-width: 48rem) {
-  .hero,
-  .contact {
-    padding-block: var(--space-8);
+  .hero {
+    padding-block: var(--space-7);
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .title {
-    font-size: clamp(3rem, 15vw, 4.5rem);
+    font-size: clamp(2.75rem, 13vw, 4rem);
   }
 
   .description {
+    padding-bottom: 0;
     font-size: var(--font-size-base);
+  }
+
+  .contact {
+    padding-block: var(--space-8);
   }
 
   .grid {

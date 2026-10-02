@@ -12,17 +12,17 @@ export default function ContactPage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className="container">
+        <div className={`container ${styles.heroInner}`}>
           <p className={styles.eyebrow}>Contact</p>
 
-          <h1 className={styles.title}>
-            Let&apos;s create something together.
-          </h1>
+          <div className={styles.heroContent}>
+            <h1 className={styles.title}>Contact</h1>
 
-          <p className={styles.description}>
-            Have a game or pixel art project in mind? Tell me a little
-            about what you&apos;re working on and what you need.
-          </p>
+            <p className={styles.description}>
+              Have a game or pixel art project in mind? Tell me a little about
+              what you&apos;re working on and what you need.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -69,8 +69,7 @@ export default function ContactPage() {
                 <p className={styles.label}>Availability</p>
 
                 <p className={styles.muted}>
-                  Available for freelance work, commissions and
-                  collaborations.
+                  Available for freelance work, commissions and collaborations.
                 </p>
               </div>
             </div>
@@ -82,9 +81,8 @@ export default function ContactPage() {
                 <h2>Tell me about your project.</h2>
 
                 <p className={styles.formIntro}>
-                  References, the type of artwork you need and an
-                  approximate timeline are helpful if you already have
-                  them.
+                  References, the type of artwork you need and an approximate
+                  timeline are helpful if you already have them.
                 </p>
               </div>
 

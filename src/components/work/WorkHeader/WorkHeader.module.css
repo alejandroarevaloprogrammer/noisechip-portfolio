@@ -1,11 +1,11 @@
 .header {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
   border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .inner {
   display: grid;
-  gap: var(--space-5);
+  gap: var(--space-4);
 }
 
 .eyebrow {
@@ -20,28 +20,32 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
   align-items: end;
-  gap: var(--space-8);
+  gap: var(--space-7);
 }
 
 .title {
-  font-size: var(--font-size-hero);
+  font-size: clamp(3rem, 6vw, 5rem);
 }
 
 .description {
   max-width: 34rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
 }
 
 @media (max-width: 48rem) {
   .header {
-    padding-block: var(--space-8);
+    padding-block: var(--space-7);
   }
 
   .content {
     grid-template-columns: 1fr;
-    gap: var(--space-5);
+    gap: var(--space-4);
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 14vw, 4rem);
   }
 
   .description {

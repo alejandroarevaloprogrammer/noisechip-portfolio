@@ -48,12 +48,16 @@ export default function AboutPage() {
   return (
     <>
       <section className={styles.hero}>
-        <div className="container">
+        <div className={`container ${styles.heroInner}`}>
           <p className={styles.eyebrow}>About</p>
 
-          <h1 className={styles.heroTitle}>
-            Pixel art for games and retro-inspired projects.
-          </h1>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>About</h1>
+
+            <p className={styles.heroDescription}>
+              Pixel art for games and retro-inspired projects.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -70,15 +74,14 @@ export default function AboutPage() {
 
             <div className={styles.introductionContent}>
               <p className={styles.lead}>
-                I&apos;m a freelance pixel artist creating
-                characters, environments, UI and animations for
-                games.
+                I&apos;m a freelance pixel artist creating characters,
+                environments, UI and animations for games.
               </p>
 
               <p className={styles.bodyText}>
-                I work with indie developers and personal game
-                projects, creating pixel art that fits the visual
-                direction and needs of each game.
+                I work with indie developers and personal game projects,
+                creating pixel art that fits the visual direction and needs of
+                each game.
               </p>
 
               <div className={styles.disciplines}>
@@ -168,9 +171,8 @@ export default function AboutPage() {
               </h2>
 
               <p className={styles.bodyText}>
-                Typical turnaround is around one week for standard
-                commissions. Larger or more complex projects may
-                require additional time.
+                Typical turnaround is around one week for standard commissions.
+                Larger or more complex projects may require additional time.
               </p>
 
               <Link
