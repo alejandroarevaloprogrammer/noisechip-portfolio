@@ -53,7 +53,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-4);
 }
 
 .number {
@@ -77,24 +77,22 @@
 .artwork {
   display: flex;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  min-height: 16rem;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .artworkImage {
   display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
+  width: 256px;
+  height: 256px;
   object-fit: contain;
   image-rendering: pixelated;
 }
 
 .itemTitle {
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
   font-size: clamp(1.75rem, 3vw, 3rem);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-tight);
@@ -130,13 +128,12 @@
   }
 
   .artwork {
-    height: clamp(8.5rem, 36vw, 10rem);
-    aspect-ratio: auto;
+    min-height: 12rem;
   }
 
   .artworkImage {
-    max-width: 88%;
-    max-height: 100%;
+    width: 256px;
+    height: 256px;
   }
 
   .itemTitle {
@@ -159,11 +156,12 @@
   }
 
   .artwork {
-    height: clamp(8rem, 34vw, 9.5rem);
+    min-height: 10rem;
   }
 
   .artworkImage {
-    max-width: 86%;
+    width: 128px;
+    height: 128px;
   }
 
   .itemTitle {

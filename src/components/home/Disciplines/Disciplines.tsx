@@ -7,37 +7,29 @@ const disciplines = [
     number: "01",
     title: "Characters",
     href: "/work?category=characters",
-    image: "/work/characters/char07.png",
-    imageAlt: "Pixel art character by Noisechip.",
-    width: 800,
-    height: 800,
+    image: "/work/characters/characters.png",
+    imageAlt: "Pixel art characters by Noisechip.",
   },
   {
     number: "02",
     title: "Environments",
     href: "/work?category=environments",
-    image: "/work/environments/bg06.gif",
+    image: "/work/environments/environments.png",
     imageAlt: "Pixel art environment by Noisechip.",
-    width: 768,
-    height: 432,
   },
   {
     number: "03",
     title: "UI",
     href: "/work?category=ui-gui",
-    image: "/work/ui-gui/gui06.png",
+    image: "/work/ui-gui/ui-gui.png",
     imageAlt: "Pixel art user interface by Noisechip.",
-    width: 768,
-    height: 432,
   },
   {
     number: "04",
     title: "Animations",
     href: "/work?category=animations",
-    image: "/work/animations/ani13.gif",
+    image: "/work/animations/animations.gif",
     imageAlt: "Pixel art animation by Noisechip.",
-    width: 800,
-    height: 800,
   },
 ];
 
@@ -72,8 +64,8 @@ export default function Disciplines() {
                 <Image
                   src={discipline.image}
                   alt={discipline.imageAlt}
-                  width={discipline.width}
-                  height={discipline.height}
+                  width={128}
+                  height={128}
                   className={styles.artworkImage}
                   unoptimized
                 />
