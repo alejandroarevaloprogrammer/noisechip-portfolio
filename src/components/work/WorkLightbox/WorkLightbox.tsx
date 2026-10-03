@@ -165,6 +165,12 @@ export default function WorkLightbox({
 
         <div className={styles.bottomBar}>
           <div className={styles.details}>
+            {item.details && (
+              <p className={styles.description}>
+                {item.details}
+              </p>
+            )}
+
             {item.tags && item.tags.length > 0 && (
               <p className={styles.tags}>
                 {item.tags.join(" · ")}

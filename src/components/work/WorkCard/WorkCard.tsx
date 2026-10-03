@@ -30,7 +30,13 @@ export default function WorkCard({
       </button>
 
       <div className={styles.meta}>
-        <p className={styles.title}>{item.title}</p>
+        <div className={styles.info}>
+          <p className={styles.title}>{item.title}</p>
+
+          {item.details && (
+            <p className={styles.details}>{item.details}</p>
+          )}
+        </div>
 
         <p className={styles.category}>
           {item.categories
