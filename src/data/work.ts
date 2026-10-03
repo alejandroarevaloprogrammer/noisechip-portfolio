@@ -49,48 +49,24 @@ export const workItems: WorkItem[] = [
     category: "animations",
     directory: "animations",
     prefix: "ani",
-    numbers: [2, 5, 6, 7, 8, 9, 10, 11, 13, 14],
+    numbers: [14, 13, 11, 10, 9, 8, 7, 6, 5, 2],
     mediaType: "gif",
   }),
 
-  // Characters — 8
+  // Characters — 10
   ...createWorkItems({
     category: "characters",
     directory: "characters",
     prefix: "char",
-    numbers: [2, 3, 4, 5, 7, 8, 9, 10],
+    numbers: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
   }),
-
-  // Characters — Various — 2
-  {
-    id: "characters-var02",
-    title: "Creature Sprites",
-    media: "/work/characters/var02.png",
-    width: 800,
-    height: 800,
-    mediaType: "image",
-    categories: ["characters"],
-    tags: ["creatures", "sprites"],
-    alt: "Pixel art creature sprites by Noisechip.",
-  },
-  {
-    id: "characters-var05",
-    title: "Portrait Expressions",
-    media: "/work/characters/var05.png",
-    width: 800,
-    height: 800,
-    mediaType: "image",
-    categories: ["characters"],
-    tags: ["portrait", "expressions"],
-    alt: "Pixel art character portrait expressions by Noisechip.",
-  },
 
   // Environments — 10
   ...createWorkItems({
     category: "environments",
     directory: "environments",
     prefix: "bg",
-    numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    numbers: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
     gifNumbers: [6, 10],
     dimensions: {
       1: { width: 640, height: 360 },
@@ -111,7 +87,7 @@ export const workItems: WorkItem[] = [
     category: "ui-gui",
     directory: "ui-gui",
     prefix: "gui",
-    numbers: [1, 2, 3, 4, 5, 6, 7],
+    numbers: [7, 6, 5, 4, 3, 2, 1],
     dimensions: {
       1: { width: 800, height: 800 },
       2: { width: 768, height: 432 },
@@ -124,57 +100,19 @@ export const workItems: WorkItem[] = [
   }),
 
   // Icons & Items — 4
-  {
-    id: "icons-items-var01",
-    title: "Hats & Helmets",
-    media: "/work/icons-items/var01.png",
-    width: 800,
-    height: 800,
-    mediaType: "image",
-    categories: ["icons-items"],
-    tags: ["hats", "equipment"],
-    alt: "Pixel art hats and helmets by Noisechip.",
-  },
-  {
-    id: "icons-items-var06",
-    title: "Racing Cars",
-    media: "/work/icons-items/var06.png",
-    width: 800,
-    height: 800,
-    mediaType: "image",
-    categories: ["icons-items"],
-    tags: ["vehicles", "cars"],
-    alt: "Pixel art racing cars by Noisechip.",
-  },
-  {
-    id: "icons-items-var07",
-    title: "Spaceships & Enemies",
-    media: "/work/icons-items/var07.png",
-    width: 800,
-    height: 800,
-    mediaType: "image",
-    categories: ["icons-items"],
-    tags: ["spaceships", "enemies"],
-    alt: "Pixel art spaceships and enemies by Noisechip.",
-  },
-  {
-    id: "icons-items-var08",
-    title: "RPG Items",
-    media: "/work/icons-items/var08.png",
-    width: 800,
-    height: 800,
-    mediaType: "image",
-    categories: ["icons-items"],
-    tags: ["RPG", "inventory", "equipment"],
-    alt: "Pixel art RPG inventory items and equipment by Noisechip.",
-  },
+  ...createWorkItems({
+    category: "icons-items",
+    directory: "icons-items",
+    prefix: "icons",
+    numbers: [4, 3, 2, 1],
+  }),
 
   // Illustrations — 7
   ...createWorkItems({
     category: "illustrations",
     directory: "illustrations",
     prefix: "illus",
-    numbers: [1, 2, 3, 4, 5, 6, 7],
+    numbers: [7, 6, 5, 4, 3, 2, 1],
     dimensions: {
       1: { width: 768, height: 432 },
       2: { width: 768, height: 432 },
@@ -191,7 +129,7 @@ export const workItems: WorkItem[] = [
     category: "fonts",
     directory: "fonts",
     prefix: "font",
-    numbers: [1, 2, 3, 4, 5, 6, 7],
+    numbers: [7, 6, 5, 4, 3, 2, 1],
   }),
 
   // Game Mockups — 19
@@ -200,8 +138,8 @@ export const workItems: WorkItem[] = [
     directory: "game-mockups",
     prefix: "mock",
     numbers: [
-      2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-      20,
+      20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3,
+      2,
     ],
     dimensions: {
       2: { width: 768, height: 432 },
