@@ -1000,6 +1000,13 @@ const standaloneWorkItems: WorkItem[] = [
 
 ];
 
+const projectWorkTitles: Partial<Record<WorkCategory, string>> = {
+  animations: "Character Animation",
+  characters: "Character",
+  environments: "Environment",
+  "ui-gui": "UI / GUI",
+};
+
 const projectWorkItems: WorkItem[] = projects.flatMap((project) =>
   project.gallery.flatMap((item, index) => {
     if (!item.workCategory) {
@@ -1009,7 +1016,9 @@ const projectWorkItems: WorkItem[] = projects.flatMap((project) =>
     return [
       {
         id: `project-${project.slug}-${index}`,
-        title: project.title,
+        title:
+          projectWorkTitles[item.workCategory] ??
+          "Project Artwork",
         media: item.src,
         width: item.width,
         height: item.height,
@@ -1035,4 +1044,3 @@ export const workItems: WorkItem[] = workCategories.flatMap(
     ),
   ],
 );
-

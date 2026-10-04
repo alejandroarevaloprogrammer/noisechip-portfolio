@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { WorkItem } from "@/types/work";
 import styles from "./WorkLightbox.module.css";
 
@@ -15,6 +16,10 @@ interface WorkLightboxProps {
 }
 
 function formatCategory(category: string) {
+  if (category === "ui-gui") {
+    return "UI / GUI";
+  }
+
   return category
     .split("-")
     .map(
@@ -114,6 +119,14 @@ export default function WorkLightbox({
     onNext,
   ]);
 
+  function handleProjectNavigation() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }
+
   return (
     <div
       ref={dialogRef}
@@ -165,16 +178,35 @@ export default function WorkLightbox({
 
         <div className={styles.bottomBar}>
           <div className={styles.details}>
-            {item.details && (
-              <p className={styles.description}>
-                {item.details}
-              </p>
-            )}
+            {item.project ? (
+              <>
+                <p className={styles.description}>
+                  {item.project.title}
+                </p>
 
-            {item.tags && item.tags.length > 0 && (
-              <p className={styles.tags}>
-                {item.tags.join(" · ")}
-              </p>
+                <Link
+                  href={`/projects/${item.project.slug}`}
+                  className={styles.projectLink}
+                  scroll
+                  onClick={handleProjectNavigation}
+                >
+                  View Full Project ↗
+                </Link>
+              </>
+            ) : (
+              <>
+                {item.details && (
+                  <p className={styles.description}>
+                    {item.details}
+                  </p>
+                )}
+
+                {item.tags && item.tags.length > 0 && (
+                  <p className={styles.tags}>
+                    {item.tags.join(" · ")}
+                  </p>
+                )}
+              </>
             )}
           </div>
 

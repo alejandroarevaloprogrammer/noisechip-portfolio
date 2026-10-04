@@ -108,6 +108,18 @@
   overflow-wrap: anywhere;
 }
 
+.projectLink {
+  width: fit-content;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.projectLink:hover {
+  color: var(--color-accent);
+}
+
 .tags {
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
@@ -166,6 +178,10 @@
   }
 
   .description {
+    font-size: var(--font-size-xs);
+  }
+
+  .projectLink {
     font-size: var(--font-size-xs);
   }
 

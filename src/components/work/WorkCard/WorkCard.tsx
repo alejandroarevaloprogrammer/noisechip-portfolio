@@ -7,6 +7,20 @@ interface WorkCardProps {
   onOpen: (item: WorkItem) => void;
 }
 
+function formatCategory(category: string) {
+  if (category === "ui-gui") {
+    return "UI / GUI";
+  }
+
+  return category
+    .split("-")
+    .map(
+      (word) =>
+        word.charAt(0).toUpperCase() + word.slice(1),
+    )
+    .join(" ");
+}
+
 export default function WorkCard({
   item,
   onOpen,
@@ -33,22 +47,22 @@ export default function WorkCard({
         <div className={styles.info}>
           <p className={styles.title}>{item.title}</p>
 
-          {item.details && (
-            <p className={styles.details}>{item.details}</p>
+          {item.project ? (
+            <p className={styles.details}>
+              {item.project.title}
+            </p>
+          ) : (
+            item.details && (
+              <p className={styles.details}>
+                {item.details}
+              </p>
+            )
           )}
         </div>
 
         <p className={styles.category}>
           {item.categories
-            .map((category) =>
-              category
-                .split("-")
-                .map(
-                  (word) =>
-                    word.charAt(0).toUpperCase() + word.slice(1),
-                )
-                .join(" "),
-            )
+            .map(formatCategory)
             .join(" · ")}
         </p>
       </div>
