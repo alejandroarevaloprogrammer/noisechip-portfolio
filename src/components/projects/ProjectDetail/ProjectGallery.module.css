@@ -1,5 +1,5 @@
 .section {
-  padding-block: var(--section-space);
+  padding-block: var(--space-8);
   border-top: var(--border-width) solid var(--color-border);
 }
 
@@ -23,7 +23,7 @@
 
 .groups {
   display: grid;
-  gap: var(--section-space);
+  gap: var(--space-8);
 }
 
 .group {
@@ -116,7 +116,7 @@
 
 @media (max-width: 48rem) {
   .section {
-    padding-block: var(--space-8);
+    padding-block: var(--space-7) var(--space-8);
   }
 
   .header {
