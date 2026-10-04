@@ -111,6 +111,42 @@
   image-rendering: pixelated;
 }
 
+.imageLandscape {
+  width: 100%;
+}
+
+/* ========================================
+   PROJECT HERO SLIDESHOW
+======================================== */
+
+.slideshow {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-width: 0;
+}
+
+.slideshowImage {
+  grid-area: 1 / 1;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: pixelated;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slideshowImageLandscape {
+  width: 100%;
+}
+
+.slideshowImageActive {
+  opacity: 1;
+}
+
 @media (max-width: 48rem) {
   .header {
     padding-block: var(--space-6) var(--space-8);

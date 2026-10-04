@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Project } from "@/types/project";
+import type { Project, ProjectMedia } from "@/types/project";
 import { workCategories } from "@/data/categories";
+import ProjectHeroSlideshow from "./ProjectHeroSlideshow";
 import styles from "./ProjectHero.module.css";
 
 interface ProjectHeroProps {
@@ -21,9 +22,30 @@ function getDisciplineLabel(id: Project["disciplines"][number]) {
   );
 }
 
+function getSlideshowItems(project: Project): ProjectMedia[] {
+  switch (project.slug) {
+    case "retro-casual-memory":
+    case "retro-casual-arcade":
+      return project.gallery.filter(
+        (item) => item.group === "gameplay",
+      );
+
+    case "retro-platformer":
+      return project.gallery.filter(
+        (item) => item.workCategory === "environments",
+      );
+
+    default:
+      return [];
+  }
+}
+
 export default function ProjectHero({
   project,
 }: ProjectHeroProps) {
+  const slideshowItems = getSlideshowItems(project);
+  const showSlideshow = slideshowItems.length > 0;
+
   return (
     <>
       <section className={styles.header}>
@@ -76,15 +98,21 @@ export default function ProjectHero({
       >
         <div className="container">
           <div className={styles.artwork}>
-            <Image
-              src={project.cover}
-              alt={`${project.title} project cover.`}
-              width={project.coverWidth}
-              height={project.coverHeight}
-              className={styles.image}
-              unoptimized
-              priority
-            />
+            {showSlideshow ? (
+              <ProjectHeroSlideshow items={slideshowItems} />
+            ) : (
+              <Image
+                src={project.cover}
+                alt={`${project.title} project cover.`}
+                width={project.coverWidth}
+                height={project.coverHeight}
+                className={`${styles.image} ${
+                  project.slug === "retro-puzzle" ? styles.imageLandscape : ""
+                }`}
+                unoptimized
+                priority
+              />
+            )}
           </div>
         </div>
       </section>
