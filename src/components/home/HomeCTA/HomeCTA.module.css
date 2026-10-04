@@ -1,12 +1,11 @@
 .section {
-  padding-block: var(--section-space);
+  padding-block: var(--space-8);
   border-top: var(--border-width) solid var(--color-border);
 }
 
 .inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .eyebrow {
@@ -18,13 +17,26 @@
   color: var(--color-accent);
 }
 
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
+  align-items: start;
+  gap: var(--space-8);
+}
+
 .title {
-  max-width: 12ch;
+  max-width: 13ch;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: var(--space-2);
 }
 
 .description {
-  max-width: 38rem;
-  margin-top: var(--space-6);
+  max-width: 32rem;
   font-size: var(--font-size-md);
   color: var(--color-text-muted);
 }
@@ -33,7 +45,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
   padding: var(--space-4) var(--space-5);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
@@ -55,12 +67,35 @@
 }
 
 @media (max-width: 48rem) {
+  .section {
+    padding-block: var(--space-7);
+  }
+
+  .eyebrow {
+    margin-bottom: var(--space-4);
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .title {
+    max-width: 12ch;
+  }
+
+  .action {
+    padding-top: 0;
+  }
+
   .description {
+    max-width: 100%;
     font-size: var(--font-size-base);
   }
 
   .button {
     width: 100%;
     justify-content: center;
+    margin-top: var(--space-5);
   }
 }
