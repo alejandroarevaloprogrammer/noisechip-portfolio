@@ -1,3 +1,4 @@
+import type { WorkCategory } from "@/data/categories";
 import type {
   Project,
   ProjectMediaGroup,
@@ -11,6 +12,7 @@ interface CreateMediaOptions {
   width: number;
   height: number;
   group: ProjectMediaGroup;
+  workCategory?: WorkCategory;
   gifIndexes?: number[];
 }
 
@@ -22,6 +24,7 @@ function createMedia({
   width,
   height,
   group,
+  workCategory,
   gifIndexes = [],
 }: CreateMediaOptions) {
   return Array.from({ length: count }, (_, index) => {
@@ -35,6 +38,7 @@ function createMedia({
       width,
       height,
       group,
+      workCategory,
     };
   });
 }
@@ -61,6 +65,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "environments",
+        workCategory: "environments",
       },
       {
         src: "/projects/retro-platformer/image-02.png",
@@ -69,6 +74,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "environments",
+        workCategory: "environments",
       },
     ],
   },
@@ -93,6 +99,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "characters-animation",
+        workCategory: "animations",
       },
       {
         src: "/projects/retro-puzzle/gui-01.png",
@@ -101,6 +108,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-puzzle/gui-02.png",
@@ -109,6 +117,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-puzzle/gui-03.png",
@@ -117,6 +126,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-puzzle/gui-04.png",
@@ -125,6 +135,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-puzzle/gui-05.png",
@@ -133,6 +144,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-puzzle/gui-06.png",
@@ -141,6 +153,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
     ],
   },
@@ -174,7 +187,7 @@ export const projects: Project[] = [
         group: "gameplay",
       }),
 
-      // Characters / Animations
+      // Characters
       ...createMedia({
         basePath: "/projects/retro-casual-memory",
         prefix: "character",
@@ -183,8 +196,10 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "characters-animation",
+        workCategory: "characters",
       }),
 
+      // Animations
       {
         src: "/projects/retro-casual-memory/character-11.gif",
         type: "gif",
@@ -192,6 +207,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "characters-animation",
+        workCategory: "animations",
       },
 
       // Environments
@@ -203,6 +219,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "environments",
+        workCategory: "environments",
       }),
 
       // UI / GUI
@@ -213,6 +230,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-casual-memory/gui-02.gif",
@@ -221,6 +239,7 @@ export const projects: Project[] = [
         width: 768,
         height: 432,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
       {
         src: "/projects/retro-casual-memory/gui-03.png",
@@ -229,6 +248,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
 
       ...Array.from({ length: 13 }, (_, index) => {
@@ -241,6 +261,7 @@ export const projects: Project[] = [
           width: 768,
           height: 432,
           group: "ui-gui" as const,
+          workCategory: "ui-gui" as const,
         };
       }),
     ],
@@ -275,7 +296,7 @@ export const projects: Project[] = [
         group: "gameplay",
       }),
 
-      // Characters / Animations
+      // Animations
       {
         src: "/projects/retro-casual-arcade/character-01.gif",
         type: "gif",
@@ -283,6 +304,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "characters-animation",
+        workCategory: "animations",
       },
 
       // Environments
@@ -294,6 +316,7 @@ export const projects: Project[] = [
         width: 480,
         height: 480,
         group: "environments",
+        workCategory: "environments",
       }),
 
       // UI / GUI
@@ -304,6 +327,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "ui-gui",
+        workCategory: "ui-gui",
       },
     ],
   },

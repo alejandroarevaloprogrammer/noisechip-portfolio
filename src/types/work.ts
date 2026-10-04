@@ -2,6 +2,11 @@ import type { WorkCategory } from "@/data/categories";
 
 export type WorkMediaType = "image" | "gif";
 
+export interface WorkProjectReference {
+  slug: string;
+  title: string;
+}
+
 export interface WorkItem {
   id: string;
   title: string;
@@ -13,4 +18,5 @@ export interface WorkItem {
   categories: WorkCategory[];
   tags?: string[];
   alt: string;
+  project?: WorkProjectReference;
 }

@@ -17,6 +17,7 @@ export interface ProjectMedia {
   width: number;
   height: number;
   group: ProjectMediaGroup;
+  workCategory?: WorkCategory;
 }
 
 export interface Project {
