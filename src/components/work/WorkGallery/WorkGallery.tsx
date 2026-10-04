@@ -21,6 +21,17 @@ function isWorkCategory(value: string | null): value is WorkCategory {
   return workCategories.some((category) => category.id === value);
 }
 
+function getCategoryLabel(category: ActiveCategory) {
+  if (category === "all") {
+    return "All";
+  }
+
+  return (
+    workCategories.find((item) => item.id === category)?.label ??
+    category
+  );
+}
+
 export default function WorkGallery() {
   const router = useRouter();
   const pathname = usePathname();
@@ -34,7 +45,9 @@ export default function WorkGallery() {
 
   const [visibleItems, setVisibleItems] = useState(INITIAL_ITEMS);
   const [selectedItem, setSelectedItem] = useState<WorkItem | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
+  const gallerySectionRef = useRef<HTMLElement | null>(null);
   const triggerElementRef = useRef<HTMLElement | null>(null);
 
   const filteredItems =
@@ -56,6 +69,30 @@ export default function WorkGallery() {
   const hasNext =
     selectedIndex >= 0 && selectedIndex < filteredItems.length - 1;
 
+  function scrollToGalleryStart() {
+    const section = gallerySectionRef.current;
+
+    if (!section) {
+      return;
+    }
+
+    const headerHeight =
+      window.innerWidth <= 768 ? 64 : 72;
+
+    const sectionTop =
+      section.getBoundingClientRect().top + window.scrollY;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.scrollTo({
+      top: Math.max(sectionTop - headerHeight, 0),
+      left: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  }
+
   function handleCategoryChange(category: ActiveCategory) {
     const params = new URLSearchParams(searchParams.toString());
 
@@ -67,6 +104,7 @@ export default function WorkGallery() {
 
     setVisibleItems(INITIAL_ITEMS);
     setSelectedItem(null);
+    setFiltersOpen(false);
 
     const queryString = params.toString();
 
@@ -74,6 +112,10 @@ export default function WorkGallery() {
       queryString ? `${pathname}?${queryString}` : pathname,
       { scroll: false },
     );
+
+    requestAnimationFrame(() => {
+      scrollToGalleryStart();
+    });
   }
 
   function handleLoadMore() {
@@ -127,37 +169,69 @@ export default function WorkGallery() {
 
   return (
     <>
-      <section className={styles.section} aria-label="Work gallery">
+      <section
+        ref={gallerySectionRef}
+        className={styles.section}
+        aria-label="Work gallery"
+      >
         <div className="container">
-          <div
-            className={styles.filters}
-            role="group"
-            aria-label="Filter work by category"
-          >
+          <div className={styles.filterArea}>
             <button
               type="button"
-              className={`${styles.filter} ${
-                activeCategory === "all" ? styles.active : ""
-              }`}
-              aria-pressed={activeCategory === "all"}
-              onClick={() => handleCategoryChange("all")}
+              className={styles.mobileFilterToggle}
+              aria-expanded={filtersOpen}
+              aria-controls="work-filters"
+              onClick={() =>
+                setFiltersOpen((current) => !current)
+              }
             >
-              All
+              <span>
+                Filter · {getCategoryLabel(activeCategory)}
+              </span>
+
+              <span
+                className={styles.mobileFilterIcon}
+                aria-hidden="true"
+              >
+                {filtersOpen ? "−" : "+"}
+              </span>
             </button>
 
-            {workCategories.map((category) => (
+            <div
+              id="work-filters"
+              className={`${styles.filters} ${
+                filtersOpen ? styles.filtersOpen : ""
+              }`}
+              role="group"
+              aria-label="Filter work by category"
+            >
               <button
-                key={category.id}
                 type="button"
                 className={`${styles.filter} ${
-                  activeCategory === category.id ? styles.active : ""
+                  activeCategory === "all" ? styles.active : ""
                 }`}
-                aria-pressed={activeCategory === category.id}
-                onClick={() => handleCategoryChange(category.id)}
+                aria-pressed={activeCategory === "all"}
+                onClick={() => handleCategoryChange("all")}
               >
-                {category.label}
+                All
               </button>
-            ))}
+
+              {workCategories.map((category) => (
+                <button
+                  key={category.id}
+                  type="button"
+                  className={`${styles.filter} ${
+                    activeCategory === category.id ? styles.active : ""
+                  }`}
+                  aria-pressed={activeCategory === category.id}
+                  onClick={() =>
+                    handleCategoryChange(category.id)
+                  }
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className={styles.gallery}>
