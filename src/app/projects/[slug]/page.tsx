@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import BackToTop from "@/components/ui/BackToTop/BackToTop";
 import ProjectHero from "@/components/projects/ProjectDetail/ProjectHero";
-import ProjectAbout from "@/components/projects/ProjectDetail/ProjectAbout";
 import ProjectGallery from "@/components/projects/ProjectDetail/ProjectGallery";
 import ProjectNavigation from "@/components/projects/ProjectNavigation/ProjectNavigation";
 
@@ -66,7 +65,6 @@ export default async function ProjectPage({
   return (
     <>
       <ProjectHero project={project} />
-      <ProjectAbout project={project} />
       <ProjectGallery project={project} />
 
       <ProjectNavigation

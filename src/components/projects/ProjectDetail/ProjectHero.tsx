@@ -62,32 +62,34 @@ export default function ProjectHero({
               </p>
 
               <h1 className={styles.title}>{project.title}</h1>
+            </div>
+
+            <div className={styles.details}>
+              <dl className={styles.meta}>
+                <div className={styles.metaItem}>
+                  <dt>Role</dt>
+                  <dd>{project.role}</dd>
+                </div>
+
+                <div className={styles.metaItem}>
+                  <dt>Genre</dt>
+                  <dd>{project.genre}</dd>
+                </div>
+
+                <div className={styles.metaItem}>
+                  <dt>Disciplines</dt>
+                  <dd>
+                    {project.disciplines
+                      .map(getDisciplineLabel)
+                      .join(" · ")}
+                  </dd>
+                </div>
+              </dl>
 
               <p className={styles.description}>
                 {project.shortDescription}
               </p>
             </div>
-
-            <dl className={styles.meta}>
-              <div className={styles.metaItem}>
-                <dt>Role</dt>
-                <dd>{project.role}</dd>
-              </div>
-
-              <div className={styles.metaItem}>
-                <dt>Genre</dt>
-                <dd>{project.genre}</dd>
-              </div>
-
-              <div className={styles.metaItem}>
-                <dt>Disciplines</dt>
-                <dd>
-                  {project.disciplines
-                    .map(getDisciplineLabel)
-                    .join(" · ")}
-                </dd>
-              </div>
-            </dl>
           </div>
         </div>
       </section>
@@ -107,7 +109,9 @@ export default function ProjectHero({
                 width={project.coverWidth}
                 height={project.coverHeight}
                 className={`${styles.image} ${
-                  project.slug === "retro-puzzle" ? styles.imageLandscape : ""
+                  project.slug === "retro-puzzle"
+                    ? styles.imageLandscape
+                    : ""
                 }`}
                 unoptimized
                 priority
