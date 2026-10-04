@@ -41,6 +41,12 @@ export default function WorkCard({
           className={styles.image}
           unoptimized
         />
+
+        {item.project && (
+          <span className={styles.projectBadge}>
+            Project
+          </span>
+        )}
       </button>
 
       <div className={styles.meta}>
