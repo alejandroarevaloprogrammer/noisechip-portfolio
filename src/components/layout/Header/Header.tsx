@@ -1,5 +1,5 @@
-import Link from "next/link";
 import MobileMenu from "@/components/layout/MobileMenu/MobileMenu";
+import HomeLogoLink from "@/components/layout/Header/HomeLogoLink";
 import NavigationLink from "@/components/ui/NavigationLink/NavigationLink";
 import ThemeToggle from "@/components/ui/ThemeToggle/ThemeToggle";
 import { mainNavigation } from "@/data/navigation";
@@ -9,13 +9,7 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <Link
-          href="/"
-          className={styles.logo}
-          aria-label="Noisechip home"
-        >
-          Noisechip
-        </Link>
+        <HomeLogoLink className={styles.logo} />
 
         <div className={styles.actions}>
           <nav
