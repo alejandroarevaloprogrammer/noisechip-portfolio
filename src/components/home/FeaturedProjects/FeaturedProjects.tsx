@@ -49,9 +49,18 @@ export default function FeaturedProjects() {
 
                 <div className={styles.info}>
                   <div>
-                    <h3 className={styles.projectTitle}>
-                      {project.title}
-                    </h3>
+                    <div className={styles.titleRow}>
+                      <h3 className={styles.projectTitle}>
+                        {project.title}
+                      </h3>
+
+                      <span
+                        className={styles.arrow}
+                        aria-hidden="true"
+                      >
+                        ↗
+                      </span>
+                    </div>
 
                     <p className={styles.disciplines}>
                       {project.disciplines.join(" · ")}
