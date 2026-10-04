@@ -77,7 +77,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p>
-            © {currentYear} Alejandro Arevalo Rojas
+            © {currentYear} Noisechip
           </p>
 
           <p>Pixel art for games.</p>

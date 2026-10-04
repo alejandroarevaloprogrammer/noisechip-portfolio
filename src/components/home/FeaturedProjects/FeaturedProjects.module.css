@@ -69,6 +69,40 @@
   padding: clamp(1rem, 2vw, 2rem);
   overflow: hidden;
   background: var(--color-surface);
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition:
+    background-color var(--transition-fast),
+    outline-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.projectLink:hover .media {
+  background: var(--color-surface-elevated);
+  outline-color: var(--color-accent);
+  box-shadow:
+    0 0 0 1px var(--color-accent),
+    0 0 18px color-mix(
+      in srgb,
+      var(--color-accent) 35%,
+      transparent
+    );
+}
+
+.projectLink:focus-visible {
+  outline: none;
+}
+
+.projectLink:focus-visible .media {
+  background: var(--color-surface-elevated);
+  outline-color: var(--color-accent);
+  box-shadow:
+    0 0 0 1px var(--color-accent),
+    0 0 18px color-mix(
+      in srgb,
+      var(--color-accent) 35%,
+      transparent
+    );
 }
 
 .image {
@@ -140,5 +174,11 @@
     flex-direction: row;
     align-items: center;
     gap: var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media {
+    transition: none;
   }
 }
