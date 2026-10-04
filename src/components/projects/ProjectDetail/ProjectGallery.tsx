@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 import type {
   Project,
+  ProjectMedia,
   ProjectMediaGroup,
 } from "@/types/project";
 import ProjectLightbox from "@/components/projects/ProjectLightbox/ProjectLightbox";
@@ -14,10 +15,10 @@ interface ProjectGalleryProps {
 }
 
 const groupOrder: ProjectMediaGroup[] = [
-  "environments",
-  "characters-animation",
-  "ui-gui",
   "gameplay",
+  "characters-animation",
+  "environments",
+  "ui-gui",
 ];
 
 const groupLabels: Record<ProjectMediaGroup, string> = {
@@ -46,6 +47,12 @@ export default function ProjectGallery({
     }))
     .filter((group) => group.items.length > 0);
 
+  const orderedGallery: ProjectMedia[] = groups.flatMap(
+    (group) => group.items,
+  );
+
+  const totalItems = orderedGallery.length;
+
   const openLightbox = (
     index: number,
     trigger: HTMLButtonElement,
@@ -72,22 +79,22 @@ export default function ProjectGallery({
     });
   }, []);
 
-  const showNext = useCallback(() => {
+  const showNext = () => {
     setActiveIndex((current) => {
       if (
         current === null ||
-        current >= project.gallery.length - 1
+        current >= totalItems - 1
       ) {
         return current;
       }
 
       return current + 1;
     });
-  }, [project.gallery.length]);
+  };
 
   const activeItem =
     activeIndex !== null
-      ? project.gallery[activeIndex]
+      ? orderedGallery[activeIndex]
       : null;
 
   return (
@@ -131,7 +138,7 @@ export default function ProjectGallery({
                 <div className={styles.gallery}>
                   {group.items.map((item) => {
                     const itemIndex =
-                      project.gallery.indexOf(item);
+                      orderedGallery.indexOf(item);
 
                     return (
                       <figure
@@ -173,9 +180,9 @@ export default function ProjectGallery({
           item={activeItem}
           projectTitle={project.title}
           currentIndex={activeIndex}
-          totalItems={project.gallery.length}
+          totalItems={totalItems}
           hasPrevious={activeIndex > 0}
-          hasNext={activeIndex < project.gallery.length - 1}
+          hasNext={activeIndex < totalItems - 1}
           onClose={closeLightbox}
           onPrevious={showPrevious}
           onNext={showNext}

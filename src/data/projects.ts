@@ -163,16 +163,18 @@ export const projects: Project[] = [
     coverWidth: 1366,
     coverHeight: 768,
     gallery: [
+      // Gameplay
       ...createMedia({
         basePath: "/projects/retro-casual-memory",
-        prefix: "background",
-        count: 10,
-        label: "Retro Casual Memory pixel art background",
-        width: 768,
-        height: 432,
-        group: "environments",
+        prefix: "gameplay",
+        count: 6,
+        label: "Retro Casual Memory gameplay",
+        width: 1366,
+        height: 768,
+        group: "gameplay",
       }),
 
+      // Characters / Animations
       ...createMedia({
         basePath: "/projects/retro-casual-memory",
         prefix: "character",
@@ -192,6 +194,18 @@ export const projects: Project[] = [
         group: "characters-animation",
       },
 
+      // Environments
+      ...createMedia({
+        basePath: "/projects/retro-casual-memory",
+        prefix: "background",
+        count: 10,
+        label: "Retro Casual Memory pixel art background",
+        width: 768,
+        height: 432,
+        group: "environments",
+      }),
+
+      // UI / GUI
       {
         src: "/projects/retro-casual-memory/gui-01.png",
         type: "image",
@@ -229,16 +243,6 @@ export const projects: Project[] = [
           group: "ui-gui" as const,
         };
       }),
-
-      ...createMedia({
-        basePath: "/projects/retro-casual-memory",
-        prefix: "gameplay",
-        count: 6,
-        label: "Retro Casual Memory gameplay",
-        width: 1366,
-        height: 768,
-        group: "gameplay",
-      }),
     ],
   },
   {
@@ -260,6 +264,28 @@ export const projects: Project[] = [
     coverWidth: 576,
     coverHeight: 768,
     gallery: [
+      // Gameplay
+      ...createMedia({
+        basePath: "/projects/retro-casual-arcade",
+        prefix: "gameplay",
+        count: 6,
+        label: "Retro Casual Arcade gameplay",
+        width: 576,
+        height: 768,
+        group: "gameplay",
+      }),
+
+      // Characters / Animations
+      {
+        src: "/projects/retro-casual-arcade/character-01.gif",
+        type: "gif",
+        alt: "Retro Casual Arcade animated pixel art character.",
+        width: 800,
+        height: 800,
+        group: "characters-animation",
+      },
+
+      // Environments
       ...createMedia({
         basePath: "/projects/retro-casual-arcade",
         prefix: "background",
@@ -270,15 +296,7 @@ export const projects: Project[] = [
         group: "environments",
       }),
 
-      {
-        src: "/projects/retro-casual-arcade/character-01.gif",
-        type: "gif",
-        alt: "Retro Casual Arcade animated pixel art character.",
-        width: 800,
-        height: 800,
-        group: "characters-animation",
-      },
-
+      // UI / GUI
       {
         src: "/projects/retro-casual-arcade/gui-01.png",
         type: "image",
@@ -287,16 +305,6 @@ export const projects: Project[] = [
         height: 800,
         group: "ui-gui",
       },
-
-      ...createMedia({
-        basePath: "/projects/retro-casual-arcade",
-        prefix: "gameplay",
-        count: 6,
-        label: "Retro Casual Arcade gameplay",
-        width: 576,
-        height: 768,
-        group: "gameplay",
-      }),
     ],
   },
 ];

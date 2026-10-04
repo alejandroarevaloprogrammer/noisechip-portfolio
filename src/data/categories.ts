@@ -1,6 +1,6 @@
 export const workCategories = [
-  { id: "characters", label: "Characters" },
   { id: "animations", label: "Animations" },
+  { id: "characters", label: "Characters" },
   { id: "environments", label: "Environments" },
   { id: "ui-gui", label: "UI / GUI" },
   { id: "icons-items", label: "Icons & Items" },
