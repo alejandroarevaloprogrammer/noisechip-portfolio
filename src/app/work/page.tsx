@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import BackToTop from "@/components/ui/BackToTop/BackToTop";
 import WorkGallery from "@/components/work/WorkGallery/WorkGallery";
 import WorkHeader from "@/components/work/WorkHeader/WorkHeader";
 
@@ -17,6 +18,8 @@ export default function WorkPage() {
       <Suspense fallback={null}>
         <WorkGallery />
       </Suspense>
+
+      <BackToTop />
     </>
   );
 }

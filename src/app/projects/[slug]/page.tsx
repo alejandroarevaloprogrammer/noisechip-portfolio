@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import BackToTop from "@/components/ui/BackToTop/BackToTop";
 import ProjectHero from "@/components/projects/ProjectDetail/ProjectHero";
 import ProjectAbout from "@/components/projects/ProjectDetail/ProjectAbout";
 import ProjectGallery from "@/components/projects/ProjectDetail/ProjectGallery";
@@ -72,6 +73,8 @@ export default async function ProjectPage({
         previousProject={previousProject}
         nextProject={nextProject}
       />
+
+      <BackToTop />
     </>
   );
 }
