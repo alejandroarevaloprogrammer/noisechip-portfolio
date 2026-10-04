@@ -37,14 +37,20 @@ export default function ProjectCard({
 
       <div className={styles.content}>
         <div className={styles.heading}>
-          <h2 className={styles.title}>
-            <Link
-              href={`/projects/${project.slug}`}
-              className={styles.titleLink}
-            >
-              {project.title}
-            </Link>
-          </h2>
+          <div className={styles.titleRow}>
+            <h2 className={styles.title}>
+              <Link
+                href={`/projects/${project.slug}`}
+                className={styles.titleLink}
+              >
+                {project.title}
+              </Link>
+            </h2>
+
+            <span className={styles.arrow} aria-hidden="true">
+              ↗
+            </span>
+          </div>
 
           <p className={styles.year}>{project.year}</p>
         </div>
