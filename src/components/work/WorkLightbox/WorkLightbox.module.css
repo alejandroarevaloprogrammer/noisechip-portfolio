@@ -40,6 +40,7 @@
 }
 
 .categories {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
 }
@@ -103,6 +104,7 @@
 }
 
 .description {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   color: var(--color-text);
   overflow-wrap: anywhere;
@@ -110,6 +112,7 @@
 
 .projectLink {
   width: fit-content;
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
@@ -121,6 +124,7 @@
 }
 
 .tags {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
   overflow-wrap: anywhere;
@@ -135,7 +139,7 @@
 .navigationButton {
   min-height: 2.5rem;
   padding: var(--space-2) var(--space-4);
-  font: inherit;
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);

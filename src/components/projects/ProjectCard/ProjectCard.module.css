@@ -116,6 +116,7 @@
 
 .year {
   flex-shrink: 0;
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
@@ -132,6 +133,7 @@
   flex-wrap: wrap;
   gap: var(--space-3) var(--space-6);
   padding-top: var(--space-3);
+  font-family: var(--font-mono), monospace;
   border-top: var(--border-width) solid var(--color-border);
 }
 
@@ -143,7 +145,7 @@
 
 .metaLabel {
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-muted);

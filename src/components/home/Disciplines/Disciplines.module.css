@@ -13,8 +13,9 @@
 
 .eyebrow {
   padding-top: var(--space-2);
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -78,7 +79,10 @@
 }
 
 .number {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.02em;
   color: var(--color-text-muted);
 }
 

@@ -13,11 +13,13 @@
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-3);
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
 }
 
 .optional {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-normal);
   color: var(--color-text-muted);
@@ -71,7 +73,7 @@
   min-width: 13rem;
   min-height: 3.25rem;
   padding: var(--space-3) var(--space-4);
-  font: inherit;
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-background);

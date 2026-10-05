@@ -9,8 +9,9 @@
 
 .eyebrow {
   margin-bottom: var(--space-4);
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -18,8 +19,9 @@
 
 .sectionLabel {
   margin-bottom: var(--space-3);
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -97,6 +99,7 @@
 
 .discipline {
   padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   border: var(--border-width) solid var(--color-border-strong);
@@ -142,8 +145,9 @@
 }
 
 .stepNumber {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   color: var(--color-accent);
 }
 
@@ -202,6 +206,7 @@
   min-width: 12rem;
   margin-top: var(--space-5);
   padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   border: var(--border-width) solid var(--color-border-strong);

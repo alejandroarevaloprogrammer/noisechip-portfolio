@@ -40,6 +40,7 @@
 }
 
 .category {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
 }
@@ -97,6 +98,7 @@
 }
 
 .counter {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
 }
@@ -110,7 +112,7 @@
 .navigationButton {
   min-height: 2.5rem;
   padding: var(--space-2) var(--space-4);
-  font: inherit;
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);

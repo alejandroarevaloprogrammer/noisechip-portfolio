@@ -10,8 +10,9 @@
 }
 
 .eyebrow {
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -47,6 +48,7 @@
 
 .count {
   flex-shrink: 0;
+  font-family: var(--font-mono), monospace;
   font-size: var(--font-size-xs);
   color: var(--color-text-muted);
 }
