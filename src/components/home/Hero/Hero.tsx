@@ -1,21 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
+import HeroSlideshow from "./HeroSlideshow";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.background} aria-hidden="true">
-        <Image
-          src="/work/environments/bg04.png"
-          alt=""
-          width={768}
-          height={432}
-          priority
-          className={styles.backgroundImage}
-          unoptimized
-        />
-      </div>
+      <HeroSlideshow />
 
       <div className={`container ${styles.inner}`}>
         <div className={styles.content}>
@@ -43,7 +33,10 @@ export default function Hero() {
           </div>
 
           <p className={styles.availability}>
-            <span className={styles.availabilityDot} aria-hidden="true" />
+            <span
+              className={styles.availabilityDot}
+              aria-hidden="true"
+            />
             Available for freelance work, commissions and long-term
             collaborations.
           </p>
