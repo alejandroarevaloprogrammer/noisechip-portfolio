@@ -40,13 +40,11 @@
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-sm);
   transition:
-    background-color var(--transition-fast),
     border-color var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
 .card:hover {
-  background: var(--color-surface-elevated);
   border-color: var(--color-accent);
   box-shadow:
     0 0 0 1px var(--color-accent),
@@ -59,7 +57,6 @@
 
 .card:focus-visible {
   outline: none;
-  background: var(--color-surface-elevated);
   border-color: var(--color-accent);
   box-shadow:
     0 0 0 1px var(--color-accent),

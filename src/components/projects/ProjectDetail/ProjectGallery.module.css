@@ -72,14 +72,12 @@
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-sm);
   transition:
-    background-color var(--transition-fast),
     border-color var(--transition-fast),
     box-shadow var(--transition-fast);
 }
 
 .item:hover,
 .item:has(.artworkButton:focus-visible) {
-  background: var(--color-surface-elevated);
   border-color: var(--color-accent);
   box-shadow: 0 0 18px
     color-mix(
