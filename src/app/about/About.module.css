@@ -17,7 +17,7 @@
 }
 
 .sectionLabel {
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-3);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   letter-spacing: 0.08em;
@@ -55,14 +55,15 @@
 .introduction,
 .process,
 .details {
-  padding-block: var(--section-space);
+  padding-block: var(--space-8);
   border-top: var(--border-width) solid var(--color-border);
 }
 
 .introductionGrid {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: var(--space-8);
+  align-items: start;
+  gap: var(--space-7);
 }
 
 .sectionTitle {
@@ -72,7 +73,7 @@
 .introductionContent {
   display: grid;
   align-content: start;
-  gap: var(--space-5);
+  gap: var(--space-4);
 }
 
 .lead {
@@ -92,7 +93,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  padding-top: var(--space-2);
 }
 
 .discipline {
@@ -103,9 +103,23 @@
 }
 
 .sectionHeader {
-  display: grid;
-  gap: var(--space-1);
-  margin-bottom: var(--space-8);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.sectionHeader .sectionLabel {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.sectionHeader .sectionTitle {
+  max-width: none;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1.15;
+  text-align: right;
 }
 
 .processGrid {
@@ -118,9 +132,9 @@
 .processStep {
   display: grid;
   align-content: start;
-  gap: var(--space-4);
+  gap: var(--space-3);
   min-width: 0;
-  padding: var(--space-6);
+  padding: var(--space-5);
 }
 
 .processStep + .processStep {
@@ -140,14 +154,14 @@
 
 .stepDescription {
   font-size: var(--font-size-sm);
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--color-text-muted);
 }
 
 .detailsGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-8);
+  gap: var(--space-7);
 }
 
 .tools,
@@ -157,14 +171,14 @@
 
 .toolList {
   display: grid;
-  margin: var(--space-7) 0 0;
+  margin: var(--space-5) 0 0;
   padding: 0;
   list-style: none;
   border-top: var(--border-width) solid var(--color-border);
 }
 
 .toolList li {
-  padding-block: var(--space-4);
+  padding-block: var(--space-3);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
   border-bottom: var(--border-width) solid var(--color-border);
@@ -176,7 +190,7 @@
 }
 
 .availability .bodyText {
-  margin-top: var(--space-7);
+  margin-top: var(--space-5);
 }
 
 .contactLink {
@@ -186,7 +200,7 @@
   gap: var(--space-5);
   width: fit-content;
   min-width: 12rem;
-  margin-top: var(--space-7);
+  margin-top: var(--space-5);
   padding: var(--space-3) var(--space-4);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
@@ -240,13 +254,13 @@
   .introduction,
   .process,
   .details {
-    padding-block: var(--space-8);
+    padding-block: var(--space-7);
   }
 
   .introductionGrid,
   .detailsGrid {
     grid-template-columns: 1fr;
-    gap: var(--space-7);
+    gap: var(--space-5);
   }
 
   .lead {
@@ -254,11 +268,29 @@
   }
 
   .sectionHeader {
-    margin-bottom: var(--space-7);
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+  }
+
+  .sectionHeader .sectionTitle {
+    max-width: 22rem;
+    text-align: left;
   }
 
   .detailsGrid {
-    gap: var(--space-8);
+    gap: var(--space-7);
+  }
+
+  .toolList {
+    margin-top: var(--space-4);
+  }
+
+  .availability .bodyText,
+  .contactLink {
+    margin-top: var(--space-4);
   }
 }
 
@@ -270,5 +302,9 @@
   .processStep + .processStep {
     border-left: 0;
     border-top: var(--border-width) solid var(--color-border);
+  }
+
+  .processStep {
+    padding: var(--space-4);
   }
 }
