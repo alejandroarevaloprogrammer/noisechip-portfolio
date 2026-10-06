@@ -17,8 +17,7 @@ export default function HomeCTA() {
 
           <div className={styles.action}>
             <p className={styles.description}>
-              Available for freelance work, commissions and long-term
-              collaborations.
+              Tell me about your game, the artwork you need and how I can help.
             </p>
 
             <Link href="/contact" className={styles.button}>

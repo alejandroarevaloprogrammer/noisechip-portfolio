@@ -35,13 +35,16 @@ const disciplines = [
 
 export default function Disciplines() {
   return (
-    <section className={styles.section} aria-labelledby="disciplines-title">
+    <section
+      className={styles.section}
+      aria-labelledby="disciplines-title"
+    >
       <div className="container">
         <div className={styles.header}>
           <p className={styles.eyebrow}>What I Do</p>
 
           <h2 id="disciplines-title" className={styles.title}>
-            Pixel art for every part of your game.
+            Pixel art for your game.
           </h2>
         </div>
 
@@ -53,9 +56,14 @@ export default function Disciplines() {
               className={styles.card}
             >
               <div className={styles.cardHeader}>
-                <span className={styles.number}>{discipline.number}</span>
+                <span className={styles.number}>
+                  {discipline.number}
+                </span>
 
-                <span className={styles.arrow} aria-hidden="true">
+                <span
+                  className={styles.arrow}
+                  aria-hidden="true"
+                >
                   ↗
                 </span>
               </div>
@@ -71,7 +79,9 @@ export default function Disciplines() {
                 />
               </div>
 
-              <span className={styles.itemTitle}>{discipline.title}</span>
+              <span className={styles.itemTitle}>
+                {discipline.title}
+              </span>
             </Link>
           ))}
         </div>

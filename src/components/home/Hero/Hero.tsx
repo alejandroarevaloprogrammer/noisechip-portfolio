@@ -18,8 +18,8 @@ export default function Hero() {
           </h1>
 
           <p className={styles.description}>
-            Freelance pixel artist creating characters, environments, UI and
-            animations for indie games and retro-inspired projects.
+            Creating characters, environments, UI and animations for indie
+            games and retro-inspired projects.
           </p>
 
           <div className={styles.actions}>

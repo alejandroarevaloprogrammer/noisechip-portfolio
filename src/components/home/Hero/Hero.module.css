@@ -142,14 +142,16 @@
   align-items: center;
   gap: 0.6rem;
   margin-top: var(--space-5);
-  padding: 0.55rem 0.75rem;
+  padding: 0.35rem 0.5rem;
   font-family: var(--font-mono), monospace;
   font-size: var(--font-size-sm);
   line-height: 1.5;
   color: var(--color-text);
-  background: color-mix(in srgb, var(--color-background) 82%, transparent);
-  border: var(--border-width) solid
-    color-mix(in srgb, var(--color-border-strong) 75%, transparent);
+  background: color-mix(
+    in srgb,
+    var(--color-background) 72%,
+    transparent
+  );
   border-radius: var(--radius-sm);
 }
 
@@ -163,7 +165,7 @@
 
 @media (max-width: 48rem) {
   .hero {
-    min-height: calc(100svh - 4.5rem);
+    min-height: calc(100svh - 4rem);
     align-items: flex-start;
   }
 
@@ -205,6 +207,14 @@
 
   .actions {
     margin-top: var(--space-6);
+  }
+
+  .secondaryAction {
+    background: color-mix(
+      in srgb,
+      var(--color-background) 82%,
+      transparent
+    );
   }
 }
 
