@@ -74,8 +74,29 @@
 
 .introductionContent {
   display: grid;
+  grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: var(--space-5);
+}
+
+.profile {
+  width: min(100%, 15rem);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.profileImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.introductionText {
+  display: grid;
   align-content: start;
   gap: var(--space-4);
+  min-width: 0;
 }
 
 .lead {
@@ -223,6 +244,10 @@
 }
 
 @media (max-width: 64rem) {
+  .introductionContent {
+    grid-template-columns: minmax(9rem, 0.6fr) minmax(0, 1.4fr);
+  }
+
   .processGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -268,6 +293,16 @@
     gap: var(--space-5);
   }
 
+  .introductionContent {
+    grid-template-columns: minmax(8rem, 0.7fr) minmax(0, 1.3fr);
+    gap: var(--space-4);
+  }
+
+  .profile {
+    max-width: 12rem;
+    justify-self: center;
+  }
+
   .lead {
     font-size: var(--font-size-lg);
   }
@@ -300,6 +335,15 @@
 }
 
 @media (max-width: 36rem) {
+  .introductionContent {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    width: min(100%, 12rem);
+    max-width: none;
+  }
+
   .processGrid {
     grid-template-columns: 1fr;
   }

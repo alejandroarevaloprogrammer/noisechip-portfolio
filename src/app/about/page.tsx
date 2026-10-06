@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./About.module.css";
 
@@ -73,26 +74,39 @@ export default function AboutPage() {
             </div>
 
             <div className={styles.introductionContent}>
-              <p className={styles.lead}>
-                I&apos;m a freelance pixel artist creating characters,
-                environments, UI and animations for games.
-              </p>
+              <div className={styles.profile}>
+                <Image
+                  src="/images/about/profile.png"
+                  alt="Noisechip pixel artist"
+                  width={374}
+                  height={381}
+                  unoptimized
+                  className={styles.profileImage}
+                />
+              </div>
 
-              <p className={styles.bodyText}>
-                I work with indie developers and personal game projects,
-                creating pixel art that fits the visual direction and needs of
-                each game.
-              </p>
+              <div className={styles.introductionText}>
+                <p className={styles.lead}>
+                  I&apos;m a freelance pixel artist creating characters,
+                  environments, UI and animations for games.
+                </p>
 
-              <div className={styles.disciplines}>
-                {disciplines.map((discipline) => (
-                  <span
-                    key={discipline}
-                    className={styles.discipline}
-                  >
-                    {discipline}
-                  </span>
-                ))}
+                <p className={styles.bodyText}>
+                  I work with indie developers and personal game projects,
+                  creating pixel art that fits the visual direction and needs of
+                  each game.
+                </p>
+
+                <div className={styles.disciplines}>
+                  {disciplines.map((discipline) => (
+                    <span
+                      key={discipline}
+                      className={styles.discipline}
+                    >
+                      {discipline}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
