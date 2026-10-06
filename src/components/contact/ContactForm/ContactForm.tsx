@@ -12,7 +12,7 @@ const projectTypes = [
 ];
 
 export default function ContactForm() {
-  const [notice, setNotice] = useState("");
+  const [showNotice, setShowNotice] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,9 +24,7 @@ export default function ContactForm() {
       return;
     }
 
-    setNotice(
-      "Online submissions are not available yet. Please contact me at contact@noisechip.com.",
-    );
+    setShowNotice(true);
   }
 
   return (
@@ -101,12 +99,16 @@ export default function ContactForm() {
         <span aria-hidden="true">→</span>
       </button>
 
-      {notice && (
+      {showNotice && (
         <p
           className={styles.notice}
           role="status"
         >
-          {notice}
+          Online submissions are not available yet. Please contact me at{" "}
+          <a href="mailto:contact@noisechip.com">
+            contact@noisechip.com
+          </a>
+          .
         </p>
       )}
     </form>
