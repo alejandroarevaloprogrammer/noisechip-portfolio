@@ -60,6 +60,10 @@
   background: transparent;
   border: var(--border-width) solid var(--color-border-strong);
   cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .close:hover {
@@ -119,6 +123,10 @@
   background: transparent;
   border: var(--border-width) solid var(--color-border-strong);
   cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .navigationButton:hover:not(:disabled) {

@@ -30,7 +30,10 @@
   transition:
     opacity 160ms ease,
     transform 160ms ease,
-    visibility 160ms ease;
+    visibility 160ms ease,
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .visible {

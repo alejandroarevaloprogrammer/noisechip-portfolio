@@ -115,6 +115,7 @@
     border: var(--border-width) solid var(--color-border-strong);
 
     cursor: pointer;
+    transition: border-color var(--transition-fast);
   }
 
   .mobileFilterToggle:hover {

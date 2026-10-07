@@ -60,6 +60,10 @@
   background: transparent;
   border: var(--border-width) solid var(--color-border-strong);
   cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .close:hover {
@@ -117,6 +121,7 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-text-muted);
   text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 .projectLink:hover {
@@ -146,6 +151,10 @@
   background: transparent;
   border: var(--border-width) solid var(--color-border-strong);
   cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .navigationButton:hover:not(:disabled) {
