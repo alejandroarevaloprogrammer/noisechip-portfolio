@@ -28,8 +28,36 @@ export const metadata: Metadata = {
 
   description: siteDescription,
 
+  manifest: "/manifest.webmanifest",
+
   alternates: {
     canonical: "/",
+  },
+
+  icons: {
+    icon: [
+      {
+        url: "/icons/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icons/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+      {
+        url: "/icons/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: [
+      {
+        url: "/icons/apple-touch-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
   },
 
   openGraph: {
