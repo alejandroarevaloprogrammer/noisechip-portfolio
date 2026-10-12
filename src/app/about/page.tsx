@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,33 @@ export const metadata: Metadata = {
   title: "About | Noisechip",
   description:
     "About Noisechip, a freelance pixel artist creating retro-inspired art for games.",
+  alternates: {
+    canonical: "/about/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Noisechip",
+    title: "About | Noisechip",
+    description:
+      "About Noisechip, a freelance pixel artist creating retro-inspired art for games.",
+    url: "/about/",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Noisechip - Retro-Inspired Pixel Art for Games",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Noisechip",
+    description:
+      "About Noisechip, a freelance pixel artist creating retro-inspired art for games.",
+    images: ["/og-image.png"],
+  },
 };
 
 const disciplines = [

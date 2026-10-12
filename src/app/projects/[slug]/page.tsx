@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
@@ -34,9 +35,40 @@ export async function generateMetadata({
     };
   }
 
+  const title = `${project.title} | Noisechip`;
+  const url = `/projects/${project.slug}/`;
+
   return {
-    title: `${project.title} | Noisechip`,
+    title,
     description: project.shortDescription,
+
+    alternates: {
+      canonical: url,
+    },
+
+    openGraph: {
+      type: "website",
+      siteName: "Noisechip",
+      title,
+      description: project.shortDescription,
+      url,
+      locale: "en_US",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Noisechip - Retro-Inspired Pixel Art for Games",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: project.shortDescription,
+      images: ["/og-image.png"],
+    },
   };
 }
 

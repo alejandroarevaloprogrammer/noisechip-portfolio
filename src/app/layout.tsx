@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist_Mono, Space_Grotesk } from "next/font/google";
 import Header from "@/components/layout/Header/Header";
@@ -17,9 +18,43 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const siteDescription =
+  "Freelance pixel artist creating characters, environments, UI and animations for indie games and retro-inspired projects. Available for commissions and collaborations.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://noisechip.com"),
+
   title: "Noisechip",
-  description: "Retro-inspired pixel art for games.",
+
+  description: siteDescription,
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    siteName: "Noisechip",
+    title: "Noisechip",
+    description: siteDescription,
+    url: "/",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Noisechip - Retro-Inspired Pixel Art for Games",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Noisechip",
+    description: siteDescription,
+    images: ["/og-image.png"],
+  },
 };
 
 const themeScript = `

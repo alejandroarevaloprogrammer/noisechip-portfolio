@@ -1,11 +1,39 @@
+
 import type { Metadata } from "next";
 import ContactForm from "@/components/contact/ContactForm/ContactForm";
 import styles from "./Contact.module.css";
 
+const description =
+  "Get in touch with Noisechip for pixel art commissions, freelance work and game projects.";
+
 export const metadata: Metadata = {
   title: "Contact | Noisechip",
-  description:
-    "Get in touch with Noisechip for pixel art commissions, freelance work and game projects.",
+  description,
+  alternates: {
+    canonical: "/contact/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Noisechip",
+    title: "Contact | Noisechip",
+    description,
+    url: "/contact/",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Noisechip - Retro-Inspired Pixel Art for Games",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Noisechip",
+    description,
+    images: ["/og-image.png"],
+  },
 };
 
 export default function ContactPage() {

@@ -72,6 +72,7 @@ export default function HeroSlideshow() {
           width={slide.width}
           height={slide.height}
           priority={index === 0}
+          fetchPriority={index === 0 ? "high" : "auto"}
           className={`${styles.backgroundImage} ${
             index === activeIndex
               ? styles.backgroundImageActive
