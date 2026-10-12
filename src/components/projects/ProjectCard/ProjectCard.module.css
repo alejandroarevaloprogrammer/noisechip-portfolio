@@ -1,3 +1,4 @@
+
 .card {
   display: grid;
   align-content: start;
@@ -13,7 +14,9 @@
 }
 
 .mediaLink:focus-visible {
-  outline: none;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .media {

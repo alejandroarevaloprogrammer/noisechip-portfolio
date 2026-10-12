@@ -156,6 +156,12 @@ export default function ContactForm() {
         <span aria-hidden="true">→</span>
       </button>
 
+      {status === "sending" && (
+        <p className="visually-hidden" role="status">
+          Sending your message. Please wait.
+        </p>
+      )}
+
       {status === "success" && (
         <p className={styles.notice} role="status">
           Your message has been sent successfully. Thank you for getting

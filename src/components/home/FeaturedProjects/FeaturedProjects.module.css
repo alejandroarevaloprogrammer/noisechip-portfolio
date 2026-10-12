@@ -1,3 +1,4 @@
+
 .section {
   padding-block: var(--section-space);
   border-top: var(--border-width) solid var(--color-border);
@@ -91,7 +92,9 @@
 }
 
 .projectLink:focus-visible {
-  outline: none;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
 }
 
 .projectLink:focus-visible .media {

@@ -1,3 +1,4 @@
+
 .footer {
   padding-block: var(--space-6) var(--space-4);
   border-top: var(--border-width) solid var(--color-border);
@@ -63,6 +64,12 @@
 
 .link:hover {
   color: var(--color-accent);
+}
+
+.logo:focus-visible,
+.link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
 }
 
 .bottom {

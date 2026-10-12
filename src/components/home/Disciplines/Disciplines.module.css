@@ -1,3 +1,4 @@
+
 .section {
   padding-block: var(--section-space);
   border-top: var(--border-width) solid var(--color-border);
@@ -56,7 +57,8 @@
 }
 
 .card:focus-visible {
-  outline: none;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
   border-color: var(--color-accent);
   box-shadow:
     0 0 0 1px var(--color-accent),

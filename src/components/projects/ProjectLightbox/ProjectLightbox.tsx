@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useEffectEvent, useId, useRef } from "react";
 import Image from "next/image";
 import type { ProjectMedia } from "@/types/project";
 import styles from "./ProjectLightbox.module.css";
@@ -37,11 +38,10 @@ export default function ProjectLightbox({
 }: ProjectLightboxProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
 
-  useEffect(() => {
-    closeButtonRef.current?.focus();
-
-    function handleKeyDown(event: KeyboardEvent) {
+  const handleKeyDown = useEffectEvent(
+    (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
         onClose();
@@ -78,12 +78,19 @@ export default function ProjectLightbox({
 
       if (focusableElements.length === 0) {
         event.preventDefault();
+        dialog.focus();
         return;
       }
 
       const firstElement = focusableElements[0];
       const lastElement =
         focusableElements[focusableElements.length - 1];
+
+      if (!dialog.contains(document.activeElement)) {
+        event.preventDefault();
+        firstElement.focus();
+        return;
+      }
 
       if (
         event.shiftKey &&
@@ -98,24 +105,30 @@ export default function ProjectLightbox({
         event.preventDefault();
         firstElement.focus();
       }
+    },
+  );
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+
+    function onDocumentKeyDown(event: KeyboardEvent) {
+      handleKeyDown(event);
     }
 
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", onDocumentKeyDown);
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener(
+        "keydown",
+        onDocumentKeyDown,
+      );
+
       document.body.style.overflow = previousOverflow;
     };
-  }, [
-    hasPrevious,
-    hasNext,
-    onClose,
-    onPrevious,
-    onNext,
-  ]);
+  }, []);
 
   return (
     <div
@@ -123,7 +136,8 @@ export default function ProjectLightbox({
       className={styles.overlay}
       role="dialog"
       aria-modal="true"
-      aria-label={`${projectTitle} artwork`}
+      aria-labelledby={titleId}
+      tabIndex={-1}
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
           onClose();
@@ -133,7 +147,9 @@ export default function ProjectLightbox({
       <div className={styles.lightbox}>
         <div className={styles.topbar}>
           <div className={styles.info}>
-            <h2 className={styles.title}>{projectTitle}</h2>
+            <h2 id={titleId} className={styles.title}>
+              {projectTitle}
+            </h2>
 
             <p className={styles.category}>
               {groupLabels[item.group]}
@@ -195,6 +211,15 @@ export default function ProjectLightbox({
             </button>
           </div>
         </div>
+
+        <span
+          className="visually-hidden"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          {`Artwork ${currentIndex + 1} of ${totalItems}: ${item.alt}`}
+        </span>
       </div>
     </div>
   );

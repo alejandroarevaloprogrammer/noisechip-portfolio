@@ -22,8 +22,8 @@ export default function NavigationLink({
   return (
     <Link
       href={href}
-      aria-current={isActive ? "page" : undefined}
       {...props}
+      aria-current={isActive ? "page" : undefined}
     >
       {children}
     </Link>

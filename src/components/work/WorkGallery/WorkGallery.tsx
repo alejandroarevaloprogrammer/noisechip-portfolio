@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRef, useState } from "react";
@@ -46,9 +47,13 @@ export default function WorkGallery() {
   const [visibleItems, setVisibleItems] = useState(INITIAL_ITEMS);
   const [selectedItem, setSelectedItem] = useState<WorkItem | null>(null);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [announcement, setAnnouncement] = useState("");
 
   const gallerySectionRef = useRef<HTMLElement | null>(null);
+  const filterToggleRef = useRef<HTMLButtonElement | null>(null);
+  const loadMoreRef = useRef<HTMLButtonElement | null>(null);
   const triggerElementRef = useRef<HTMLElement | null>(null);
+  const pendingLoadFocusRef = useRef(false);
 
   const filteredItems =
     activeCategory === "all"
@@ -102,9 +107,26 @@ export default function WorkGallery() {
       params.set("category", category);
     }
 
+    const wasMobileFilterOpen = filtersOpen;
+
+    if (wasMobileFilterOpen) {
+      filterToggleRef.current?.focus();
+    }
+
     setVisibleItems(INITIAL_ITEMS);
     setSelectedItem(null);
     setFiltersOpen(false);
+
+    const categoryItems =
+      category === "all"
+        ? workItems
+        : workItems.filter((item) =>
+            item.categories.includes(category),
+          );
+
+    setAnnouncement(
+      `${getCategoryLabel(category)}: ${categoryItems.length} artworks.`,
+    );
 
     const queryString = params.toString();
 
@@ -119,7 +141,39 @@ export default function WorkGallery() {
   }
 
   function handleLoadMore() {
-    setVisibleItems((current) => current + ITEMS_PER_LOAD);
+    const previousCount = displayedItems.length;
+
+    const nextCount = Math.min(
+      visibleItems + ITEMS_PER_LOAD,
+      filteredItems.length,
+    );
+
+    const newlyLoadedCount = nextCount - previousCount;
+
+    if (newlyLoadedCount <= 0) {
+      return;
+    }
+
+    const isLastBatch = nextCount >= filteredItems.length;
+
+    pendingLoadFocusRef.current =
+      isLastBatch &&
+      document.activeElement === loadMoreRef.current;
+
+    setVisibleItems(nextCount);
+
+    setAnnouncement(
+      `${newlyLoadedCount} more artworks loaded. ${nextCount} of ${filteredItems.length} artworks displayed.`,
+    );
+
+    if (isLastBatch) {
+      requestAnimationFrame(() => {
+        if (pendingLoadFocusRef.current) {
+          gallerySectionRef.current?.focus();
+          pendingLoadFocusRef.current = false;
+        }
+      });
+    }
   }
 
   function handleOpen(item: WorkItem) {
@@ -173,10 +227,12 @@ export default function WorkGallery() {
         ref={gallerySectionRef}
         className={styles.section}
         aria-label="Work gallery"
+        tabIndex={-1}
       >
         <div className="container">
           <div className={styles.filterArea}>
             <button
+              ref={filterToggleRef}
               type="button"
               className={styles.mobileFilterToggle}
               aria-expanded={filtersOpen}
@@ -234,6 +290,15 @@ export default function WorkGallery() {
             </div>
           </div>
 
+          <div
+            className="visually-hidden"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {announcement}
+          </div>
+
           <div className={styles.gallery}>
             {displayedItems.map((item) => (
               <WorkCard
@@ -247,6 +312,7 @@ export default function WorkGallery() {
           {hasMoreItems && (
             <div className={styles.loadMoreWrapper}>
               <button
+                ref={loadMoreRef}
                 type="button"
                 className={styles.loadMore}
                 onClick={handleLoadMore}

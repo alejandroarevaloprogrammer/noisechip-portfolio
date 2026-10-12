@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useEffectEvent, useId, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { WorkItem } from "@/types/work";
@@ -39,11 +40,16 @@ export default function WorkLightbox({
 }: WorkLightboxProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const titleId = useId();
 
-  useEffect(() => {
-    closeButtonRef.current?.focus();
+  const handleDialogKeyDown = useEffectEvent(
+    (event: KeyboardEvent) => {
+      const dialog = dialogRef.current;
 
-    function handleKeyDown(event: KeyboardEvent) {
+      if (!dialog) {
+        return;
+      }
+
       if (event.key === "Escape") {
         event.preventDefault();
         onClose();
@@ -66,26 +72,37 @@ export default function WorkLightbox({
         return;
       }
 
-      const dialog = dialogRef.current;
-
-      if (!dialog) {
-        return;
-      }
-
       const focusableElements = Array.from(
         dialog.querySelectorAll<HTMLElement>(
           'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
         ),
+      ).filter(
+        (element) =>
+          element.getClientRects().length > 0 &&
+          !element.closest("[inert]"),
       );
 
       if (focusableElements.length === 0) {
         event.preventDefault();
+        dialog.focus();
         return;
       }
 
       const firstElement = focusableElements[0];
       const lastElement =
         focusableElements[focusableElements.length - 1];
+
+      if (!dialog.contains(document.activeElement)) {
+        event.preventDefault();
+
+        if (event.shiftKey) {
+          lastElement.focus();
+        } else {
+          firstElement.focus();
+        }
+
+        return;
+      }
 
       if (
         event.shiftKey &&
@@ -100,6 +117,14 @@ export default function WorkLightbox({
         event.preventDefault();
         firstElement.focus();
       }
+    },
+  );
+
+  useEffect(() => {
+    closeButtonRef.current?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      handleDialogKeyDown(event);
     }
 
     document.addEventListener("keydown", handleKeyDown);
@@ -111,13 +136,7 @@ export default function WorkLightbox({
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
     };
-  }, [
-    hasPrevious,
-    hasNext,
-    onClose,
-    onPrevious,
-    onNext,
-  ]);
+  }, []);
 
   function handleProjectNavigation() {
     window.scrollTo({
@@ -133,7 +152,8 @@ export default function WorkLightbox({
       className={styles.overlay}
       role="dialog"
       aria-modal="true"
-      aria-label={item.title}
+      aria-labelledby={titleId}
+      tabIndex={-1}
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
           onClose();
@@ -143,7 +163,12 @@ export default function WorkLightbox({
       <div className={styles.lightbox}>
         <div className={styles.topbar}>
           <div className={styles.info}>
-            <h2 className={styles.title}>{item.title}</h2>
+            <h2
+              id={titleId}
+              className={styles.title}
+            >
+              {item.title}
+            </h2>
 
             <p className={styles.categories}>
               {item.categories
@@ -236,6 +261,15 @@ export default function WorkLightbox({
           </div>
         </div>
       </div>
+
+      <span
+        className="visually-hidden"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {item.title}
+      </span>
     </div>
   );
 }
