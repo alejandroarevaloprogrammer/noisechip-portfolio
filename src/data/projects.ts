@@ -251,8 +251,7 @@ export const projects: Project[] = [
         workCategory: "fonts",
       },
 
-      ...Array.from({ length: 13 }, (_, index) => {
-        const number = index + 4;
+      ...[4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16].map((number) => {
 
         return {
           src: `/projects/retro-casual-memory/gui-${String(number).padStart(2, "0")}.png`,
