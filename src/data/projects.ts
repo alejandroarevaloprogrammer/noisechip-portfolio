@@ -135,7 +135,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "ui-gui",
-        workCategory: "ui-gui",
+        workCategory: "fonts",
       },
       {
         src: "/projects/retro-puzzle/gui-05.png",
@@ -248,7 +248,7 @@ export const projects: Project[] = [
         width: 800,
         height: 800,
         group: "ui-gui",
-        workCategory: "ui-gui",
+        workCategory: "fonts",
       },
 
       ...Array.from({ length: 13 }, (_, index) => {

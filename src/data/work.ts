@@ -1036,10 +1036,10 @@ const projectWorkItems: WorkItem[] = projects.flatMap((project) =>
 
 export const workItems: WorkItem[] = workCategories.flatMap(
   (category) => [
-    ...projectWorkItems.filter((item) =>
+    ...standaloneWorkItems.filter((item) =>
       item.categories.includes(category.id),
     ),
-    ...standaloneWorkItems.filter((item) =>
+    ...projectWorkItems.filter((item) =>
       item.categories.includes(category.id),
     ),
   ],
