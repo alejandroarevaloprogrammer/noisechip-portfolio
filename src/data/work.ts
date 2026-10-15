@@ -642,7 +642,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       7: {
 
-        title: "Various",
+        title: "Lily Pads",
 
         details: "100x200 • 1:2",
 
@@ -650,7 +650,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       6: {
 
-        title: "Various",
+        title: "Traditional Japanese House",
 
         details: "256x256 • 1:1",
 
@@ -658,7 +658,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       5: {
 
-        title: "Various",
+        title: "Japanese Fighter Plane",
 
         details: "256x144 • 16:9",
 
@@ -666,7 +666,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       4: {
 
-        title: "Various",
+        title: "Octopus Boss Battle",
 
         details: "256x144 • 16:9",
 
@@ -674,7 +674,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       3: {
 
-        title: "Various",
+        title: "Fallen Soldier",
 
         details: "256x128 • 2:1",
 
@@ -682,7 +682,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       2: {
 
-        title: "Various",
+        title: "Warrior at Sunrise",
 
         details: "256x144 • 16:9",
 
@@ -690,7 +690,7 @@ const standaloneWorkItems: WorkItem[] = [
 
       1: {
 
-        title: "Various",
+        title: "Noir Detective",
 
         details: "256x144 • 16:9",
 
