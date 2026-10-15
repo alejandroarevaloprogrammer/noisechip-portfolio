@@ -142,11 +142,19 @@ const standaloneWorkItems: WorkItem[] = [
 
     prefix: "ani",
 
-    numbers: [14, 13, 11, 10, 9, 8, 7, 6, 5, 2],
+    numbers: [15, 14, 13, 11, 10, 9, 8, 7, 6, 5, 2],
 
     mediaType: "gif",
 
     metadata: {
+
+      15: {
+
+        title: "Walking",
+        
+        details: "Top Down Front • 16x16 • 4 Frames",
+        
+      },
 
       14: {
 
