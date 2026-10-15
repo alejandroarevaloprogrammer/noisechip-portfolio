@@ -132,7 +132,7 @@ function createWorkItems({
 
 const standaloneWorkItems: WorkItem[] = [
 
-  // Animations — 10
+  // Animations — 11
 
   ...createWorkItems({
 
@@ -618,7 +618,7 @@ const standaloneWorkItems: WorkItem[] = [
 
 
 
-  // Illustrations — 7
+  // Illustrations — 8
 
   ...createWorkItems({
 
@@ -628,9 +628,17 @@ const standaloneWorkItems: WorkItem[] = [
 
     prefix: "illus",
 
-    numbers: [7, 6, 5, 4, 3, 2, 1],
+    numbers: [8, 7, 6, 5, 4, 3, 2, 1],
 
     metadata: {
+
+      8: {
+
+        title: "Skull",
+        
+        details: "800x800 • 1:1",
+      
+      },
 
       7: {
 
@@ -705,6 +713,8 @@ const standaloneWorkItems: WorkItem[] = [
       6: { width: 512, height: 512 },
 
       7: { width: 400, height: 800 },
+
+      8: { width: 800, height: 800 },
 
     },
 
