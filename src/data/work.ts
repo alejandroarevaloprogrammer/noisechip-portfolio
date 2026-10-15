@@ -636,7 +636,7 @@ const standaloneWorkItems: WorkItem[] = [
 
         title: "Skull",
         
-        details: "800x800 • 1:1",
+        details: "100x100 • 1:1",
       
       },
 
