@@ -354,7 +354,7 @@ const standaloneWorkItems: WorkItem[] = [
 
     prefix: "bg",
 
-    numbers: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+    numbers: [10, 9, 8, 7, 6, 5, 3, 2, 1],
 
     gifNumbers: [6, 10],
 
@@ -403,14 +403,6 @@ const standaloneWorkItems: WorkItem[] = [
       5: {
 
         title: "Metroidvania",
-
-        details: "256x144 • 16:9",
-
-      },
-
-      4: {
-
-        title: "Various",
 
         details: "256x144 • 16:9",
 
@@ -628,9 +620,17 @@ const standaloneWorkItems: WorkItem[] = [
 
     prefix: "illus",
 
-    numbers: [8, 7, 6, 5, 4, 3, 2, 1],
+    numbers: [9, 8, 7, 6, 5, 4, 3, 2, 1],
 
     metadata: {
+
+      9: {
+
+        title: "Sakura Temple",
+
+        details: "256x144 • 16:9",
+
+      },
 
       8: {
 
