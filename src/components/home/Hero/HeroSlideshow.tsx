@@ -13,7 +13,7 @@ const slides = [
     height: 432,
   },
   {
-    src: "/work/environments/bg04.png",
+    src: "/work/illustrations/illus09.png",
     width: 768,
     height: 432,
   },
